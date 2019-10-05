@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.db.hackathon.exception.CustomValidationException;
 import com.db.hackathon.model.User;
 import com.db.hackathon.service.UserService;
 import com.db.hackathon.validatior.UserValidator;
@@ -29,7 +30,7 @@ public class UserResource {
 	public ResponseEntity<User> registerUser(@Valid @RequestBody User user , BindingResult bindingResult){
 		userValidator.validate(user, bindingResult);
 		if (bindingResult.hasErrors()) {
-			throw new RuntimeException();
+			throw new CustomValidationException(bindingResult);
 		}
 		return new ResponseEntity<User>(userServcie.save(user), HttpStatus.CREATED);
 	}

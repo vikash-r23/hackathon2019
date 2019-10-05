@@ -25,9 +25,25 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 		ApiError error = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, "Server error", details);
 		return new ResponseEntity<Object>(error, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
+	
+	
+	@ExceptionHandler(CustomValidationException.class)
+	public final ResponseEntity<Object> handleBadRequest(CustomValidationException ex, WebRequest request) {
+		List<String> details = new ArrayList<>();
+		for (ObjectError error : ex.getBindingResult().getAllErrors()) {
+			details.add(error.getDefaultMessage());
+		}
+		ApiError error = new ApiError(HttpStatus.BAD_REQUEST, "Validation failed", details);
+		return new ResponseEntity<Object>(error, HttpStatus.BAD_REQUEST);
+	}
+	
 
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,HttpHeaders headers, HttpStatus status, WebRequest request) {
+		return validate(ex);
+	}
+
+	private ResponseEntity<Object> validate(MethodArgumentNotValidException ex) {
 		List<String> details = new ArrayList<>();
 		for (ObjectError error : ex.getBindingResult().getAllErrors()) {
 			details.add(error.getDefaultMessage());
