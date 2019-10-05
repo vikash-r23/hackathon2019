@@ -1,4 +1,4 @@
-package com.db.hackathon.validatior;
+package com.db.hackathon.validator;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.db.hackathon.exception.CustomValidationException;
 import com.db.hackathon.model.User;
 import com.db.hackathon.service.UserService;
-import com.db.hackathon.validatior.UserValidator;
+import com.db.hackathon.validator.UserValidator;
 
 @RestController
 @RequestMapping("/api/user")
@@ -28,6 +28,16 @@ public class UserResource {
 	
 	@PostMapping("/register")
 	public ResponseEntity<User> registerUser(@Valid @RequestBody User user , BindingResult bindingResult){
+		userValidator.validate(user, bindingResult);
+		if (bindingResult.hasErrors()) {
+			throw new CustomValidationException(bindingResult);
+		}
+		return new ResponseEntity<User>(userServcie.save(user), HttpStatus.CREATED);
+	}
+	
+	
+	@PostMapping("/login")
+	public ResponseEntity<User> login(@Valid @RequestBody User user , BindingResult bindingResult){
 		userValidator.validate(user, bindingResult);
 		if (bindingResult.hasErrors()) {
 			throw new CustomValidationException(bindingResult);
