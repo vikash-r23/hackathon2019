@@ -1,5 +1,7 @@
 package com.db.hackathon.service;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -24,7 +26,7 @@ public class UserServiceImpl implements UserService {
 	        if (user == null) {
 	            throw new UsernameNotFoundException("Invalid username or password.");
 	        }
-	        return new org.springframework.security.core.userdetails.User(user.getUserName(),user.getPassword(),null);
+	        return new org.springframework.security.core.userdetails.User(user.getUserName(),user.getPassword(),new ArrayList<>());
 	}
 
 
