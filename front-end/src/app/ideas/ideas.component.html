@@ -1,0 +1,36 @@
+<div class="card-columns" style="margin: 0.5rem">
+    <div *ngFor="let idea of ideasData">
+        <div class="card">
+            <div class="card-header">{{idea.name}}</div>
+            <div class="card-body">
+                <h4 class="card-title">{{idea.idea}}</h4>
+                <p class="card-text">{{idea.details}}</p>
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ideaDetails" 
+                    (click)="knowMoreClick(idea)">Know More</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ideaDetails" tabindex="-1" role="dialog" 
+    aria-labelledby="ideaDetailsTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ideaDetailsTitle">{{ideaDetailsTitle}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                {{ideaDetailsData}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Like</button>
+            </div>
+        </div>
+    </div>
+</div>
