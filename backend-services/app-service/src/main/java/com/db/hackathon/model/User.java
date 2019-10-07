@@ -61,7 +61,7 @@ public class User {
 	@Pattern(regexp=AppConstants.MOBILE_NUM_PATTERN,message = "Please enter a valid 10 digit mobile number")
 	private String mobileNumber;
 
-	@Column(name = "user_type", nullable = false, unique = true)
+	@Column(name = "user_type", nullable = false)
 	@Enumerated(EnumType.STRING)
 	private UserType userType;
 
