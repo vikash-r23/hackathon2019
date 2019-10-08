@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +35,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
     NoopAnimationsModule,
     NgxChartsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     AgGridModule.withComponents([AppComponent])
   ],
   providers: [IdeasService],
