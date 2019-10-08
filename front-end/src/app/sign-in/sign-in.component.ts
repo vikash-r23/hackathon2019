@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SignInService } from "../../dataService/sign-in.service"
 
@@ -11,7 +12,7 @@ export class SignInComponent implements OnInit {
 
   signInForm: FormGroup;
 
-  constructor(private signInService: SignInService, private formBuilder: FormBuilder) { }
+  constructor(private signInService: SignInService, private formBuilder: FormBuilder, private router:Router) { }
 
   ngOnInit() {
     this.signInForm = this.formBuilder.group({
@@ -30,8 +31,7 @@ export class SignInComponent implements OnInit {
     };
 
     this.signInService.authenticateUser(userDetails).subscribe((data)=>{
-      console.log(data);
-      
+      this.router.navigate(['/ideas']);
     });
   }
 }
