@@ -62,12 +62,13 @@ public class UserResource {
 
 	
 	@PostMapping("/authenticate")
-	public ResponseEntity<?> createAuthenticationToken(@Valid @RequestBody JwtRequest authenticationRequest) throws Exception {
+	public ResponseEntity<?> login(@Valid @RequestBody JwtRequest authenticationRequest) throws Exception {
 		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
 		authenticate(authenticationRequest.getUsername(),authenticationRequest.getPassword());
 		final String token = jwtTokenUtil.generateToken(userDetails);
-		String role = Iterables.get(userDetails.getAuthorities(), 0).getAuthority();
-		return ResponseEntity.ok(new JwtResponse(userDetails.getUsername(),role,token));
+		String userId = Iterables.get(userDetails.getAuthorities(), 0).getAuthority();
+		String role = Iterables.get(userDetails.getAuthorities(), 1).getAuthority();
+		return ResponseEntity.ok(new JwtResponse(userId,userDetails.getUsername(),role,token));
 	}
 
 	private void authenticate(String username, String password) throws Exception {

@@ -7,19 +7,29 @@ import java.time.format.DateTimeFormatter;
 public class JwtResponse implements Serializable {
 
 	private static final long serialVersionUID = -8091879091924046844L;
+	private String userId;
 	private String userName;
 	private String userType;
 	private final String jwttoken;
 	private String loginTime;
 	
-	public JwtResponse(String userName, String userType, String jwttoken) {
+	public JwtResponse(String userId,String userName, String userType, String jwttoken) {
 		super();
+		this.userId = userId;
 		this.userName = userName;
 		this.userType = userType;
 		this.jwttoken = jwttoken;
 		this.loginTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss").format(LocalDateTime.now());
 	}
 
+	
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
 	public String getUserName() {
 		return userName;
