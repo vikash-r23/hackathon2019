@@ -20,6 +20,9 @@
             <span class="form-field">
                 <input type="button" name="signin" value="Sign In" (click)="authenticateUser(username.value, password.value)"/>
             </span>
+            <span class="form-field signUpLink">
+                <a (click)="redirectTo()">Sign Up</a>
+            </span>
         </div>
     </form>
 </div>
