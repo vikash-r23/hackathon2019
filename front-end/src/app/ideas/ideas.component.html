@@ -1,3 +1,67 @@
+<div class="container-fluid mainContainer">
+  <nav class="navbar navbar-dark header">
+     <!-- <a class="navbar-brand" href="#">
+          <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+        </a>  -->
+    <a class="navbar-brand"><img src="../../assets/images/logo.jpg" width="100" height="60" alt=""></a>
+    <ul class="navbar-nav navbar-expand-xl menu">
+            <li class="nav-item dropdown" dropdown>
+                    <a dropdownToggle mdbWavesEffect class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                            Ideas</a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Add</a>
+                    <div class="divider dropdown-divider"></div>
+                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
+                </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="./admin" routerLinkActive="active" skipLocationChange>Portfolio</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" routerLink="./investor" routerLinkActive="active" skipLocationChange>Link 2</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" routerLink="./startUps" routerLinkActive="active" skipLocationChange>Contact</a>
+            </li>
+            <li class="nav-item dropdown" dropdown>
+                    <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                      Basic dropdown<span class="caret"></span></a>
+                    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
+                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
+                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
+                      <div class="divider dropdown-divider"></div>
+                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
+                    </div>
+                  </li>
+            
+            
+    </ul>
+    <form class="form-inline" [formGroup]="myForm">
+      <div class="btn-group dropleft">
+        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              User Info
+        </button>
+        <div class="dropdown-menu">
+          <div class="card" style="width: 18rem; border-style: none">
+            <div class="card-body">
+              <h5 class="card-title">Logged-in user name</h5>
+              <h6 class="card-subtitle mb-2 text-muted">investor/admin/startup</h6>
+              <p class="card-text">User details if any</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </nav>
+  <div>
+      <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+
+
 <div class="card-columns" style="margin: 0.5rem">
     <div *ngFor="let idea of ideasData">
         <div class="card">

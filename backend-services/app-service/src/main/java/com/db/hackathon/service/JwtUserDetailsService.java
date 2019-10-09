@@ -1,9 +1,12 @@
 package com.db.hackathon.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.DisabledException;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -27,6 +30,9 @@ public class JwtUserDetailsService implements UserDetailsService {
 		if(UserStatus.N.equals(user.getEnabled())) {
 			throw new DisabledException("User is not active: " + username);
 		}
-		return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),new ArrayList<>());
+		List<GrantedAuthority> list = new ArrayList<>();
+		list.add(new SimpleGrantedAuthority(user.getUserType().toString()));
+		list.add(new SimpleGrantedAuthority(String.valueOf(user.getUserId())));
+		return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),list);
 	}
 }

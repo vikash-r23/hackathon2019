@@ -20,6 +20,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateIdeaComponent } from './create-idea/create-idea.component'; // <== add the imports!
 
+import { AddIdeaComponent } from './add-idea/add-idea.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { CreateIdeaComponent } from './create-idea/create-idea.component'; // <=
     routingComponents,
     SignInComponent,
     SignUpComponent,
-    CreateIdeaComponent
+    CreateIdeaComponent,
+    AddIdeaComponent
   ],
   imports: [
     FormsModule,
@@ -41,6 +44,7 @@ import { CreateIdeaComponent } from './create-idea/create-idea.component'; // <=
     NoopAnimationsModule,
     NgxChartsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     AgGridModule.withComponents([AppComponent])
   ],
   providers: [IdeasService],

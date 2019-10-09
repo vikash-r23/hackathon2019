@@ -1,14 +1,18 @@
 package com.db.hackathon.model;
 
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -24,7 +28,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 import com.db.hackathon.constants.AppConstants;
 import com.db.hackathon.constants.UserStatus;
 import com.db.hackathon.constants.UserType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "user")
@@ -33,7 +36,6 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "user_id")
-	@JsonIgnore
 	private Long userId;
 
 	@Column(name = "username", nullable = false, unique = true)
@@ -78,6 +80,9 @@ public class User {
 	@Column(name = "modified_on", nullable = false)
 	@UpdateTimestamp
 	private Date updated;
+	
+	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private Set<Idea> ideas;
 
 	public Long getUserId() {
 		return userId;
@@ -165,6 +170,14 @@ public class User {
 
 	public void setEnabled(UserStatus enabled) {
 		this.enabled = enabled;
+	}
+
+	public Set<Idea> getIdeas() {
+		return ideas;
+	}
+
+	public void setIdeas(Set<Idea> ideas) {
+		this.ideas = ideas;
 	}
 	
 }

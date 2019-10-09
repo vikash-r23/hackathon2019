@@ -1,0 +1,12 @@
+{
+  "confirmPassword": "Password@123",
+  "created": "2019-10-05T11:25:54.957Z",
+  "enabled": "Y",
+  "firstName": "Sunita",
+  "lastName": "Kadam",
+  "mobileNumber": "1234567890",
+  "password": "Password@123",
+  "updated": "2019-10-05T11:25:54.957Z",
+  "userName": "test1@gmail.com",
+  "userType": "INVESTOR"
+}
