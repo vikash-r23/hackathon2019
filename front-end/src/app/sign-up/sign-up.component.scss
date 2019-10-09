@@ -5,21 +5,21 @@ $white-color: #fff;
 .main-container {
     background-color: $primary-color;
     height: 100vh;
+    overflow: auto;
     position: relative;
-    overflow-y: scroll;
 }
-.signin-container {
+.signup-container {
     background-color: $white-color;
     border-radius: 10px;
-    height:65vh;
+    height:auto;
     left: 50%;
     padding: 40px;
     position: absolute;
     text-align: left;
-    top: 10%;
+    top: 5%;
     transform: translate(-50%,0);
-    width:45%;
-    overflow-y: scroll;
+    width:50%;
+    overflow-y: auto;
     padding-top: 20px;
 }
 .form-field input[type="text"] {
@@ -30,7 +30,7 @@ $white-color: #fff;
     //margin-bottom: 29px;
     outline: 0;
     padding: 9px;
-    width: 70%;
+    width: 65%;
     display: inline-block;
 }
 
@@ -40,7 +40,7 @@ $white-color: #fff;
     //margin-bottom: 29px;
     outline: 0;
     padding: 9px;
-    width: 30%;
+    width: 35%;
     float: left;
 }
 
@@ -56,7 +56,7 @@ $white-color: #fff;
     //margin-bottom: 29px;
     outline: 0;
     padding: 9px;
-    width: 70%;
+    width: 65%;
     display: inline-block;
 }
 .form-field input[type="password"]  {
@@ -67,9 +67,11 @@ $white-color: #fff;
     //margin-bottom: 29px;
     outline: 0;
     padding: 9px;
-    width: 70%;
+    width: 65%;
     display: inline-block;
 }
+
+
 .alert{
     //border: 1px solid #909090;
     //border-radius: 10px;
@@ -80,7 +82,7 @@ $white-color: #fff;
     outline: 0;
     //padding-top: 0%;
     //padding: 9px;
-    width: 70%;
+    width: 65%;
     display: inline-block;
 }
 .form-field input[type="tel"] {
@@ -91,10 +93,10 @@ $white-color: #fff;
     //margin-bottom: 29px;
     outline: 0;
     padding: 9px;
-    width: 70%;
+    width: 65%;
 }
 
-.form-field input[type="button"] {
+.form-field button{
     background: $primary-color;
     border: 0 none;
     border-radius: 15px;

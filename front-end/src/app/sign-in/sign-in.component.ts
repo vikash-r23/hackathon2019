@@ -10,6 +10,7 @@ import { SignInService } from "../../dataService/sign-in.service"
 })
 export class SignInComponent implements OnInit {
 
+  
   signInForm: FormGroup;
 
   constructor(private signInService: SignInService, private formBuilder: FormBuilder, private router:Router) { }
@@ -32,6 +33,11 @@ export class SignInComponent implements OnInit {
 
     this.signInService.authenticateUser(userDetails).subscribe((data)=>{
       this.router.navigate(['/ideas']);
+      this.signInService.userDetails=data;
     });
+  }
+
+  redirectTo() {
+    this.router.navigate(['/signUp']);
   }
 }

@@ -2,21 +2,26 @@
 $primary-color: #0c2340;
 $white-color: #fff;
 
-.main-container {
+.header-container {
     background-color: $primary-color;
-    height: 100vh;
-    position: relative;
+}
+.main-container {
+    // background-image: url('../../assets/images/new_bg.png');
+    // background-repeat: no-repeat;
+    // height: 100vh;
+    // width: 100%;
+    // position: relative;
 }
 .signin-container {
     background-color: $white-color;
     border-radius: 10px;
-    height:42%;
-    left: 50%;
+    float: right;
+    height:auto;
     padding: 40px;
     position: absolute;
+    right: 3%;
     text-align: center;
-    top:50%;
-    transform: translate(-50%,-50%);
+    top:30%;
     width:35%;
 }
 .form-field input[type="text"] {
@@ -39,4 +44,33 @@ $white-color: #fff;
     height:48px;
     outline: 0;
     width: 100%;
+}
+.signUpLink {
+    float: right;
+    margin-top: 10px;
+    color: #007bff;
+
+    a {
+        text-decoration: underline;
+    }
+}
+.db-logo {
+    margin-left: 18px;
+    left:0;
+    position: absolute;
+
+    img {
+        margin-top: 10px;
+    }
+}
+.app-logo {
+    float: right;
+    margin-top: 10px;
+    margin-right: 45px;
+    right:0;
+    position: absolute;
+}
+.bg-img {
+    position: relative;
+    height: 100vh;
 }

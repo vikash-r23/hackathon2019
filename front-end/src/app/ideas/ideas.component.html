@@ -1,25 +1,18 @@
 <div class="container-fluid mainContainer">
   <nav class="navbar navbar-dark header">
-     <!-- <a class="navbar-brand" href="#">
-          <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
-        </a>  -->
     <a class="navbar-brand"><img src="../../assets/images/logo.jpg" width="100" height="60" alt=""></a>
-    <ul class="navbar-nav navbar-expand-xl menu">
-            <li class="nav-item dropdown" dropdown>
-                    <a dropdownToggle mdbWavesEffect class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-                            Ideas</a>
-                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Add</a>
-                    <div class="divider dropdown-divider"></div>
-                    <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
-                </div>
+    <ul class="navbar-nav navbar-expand-xl navbar-expand-lg navbar-expand-md menu">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Ideas
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" (click)="open(addIdea)">Add Idea</a>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="./admin" routerLinkActive="active" skipLocationChange>Portfolio</a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" routerLink="./investor" routerLinkActive="active" skipLocationChange>Link 2</a>
-            </li> -->
             <li class="nav-item">
               <a class="nav-link" routerLink="./startUps" routerLinkActive="active" skipLocationChange>Contact</a>
             </li>
@@ -45,9 +38,17 @@
         <div class="dropdown-menu">
           <div class="card" style="width: 18rem; border-style: none">
             <div class="card-body">
-              <h5 class="card-title">Logged-in user name</h5>
+              <table>
+              <tr *ngFor="let userDetail of userDetails | keyvalue"><div *ngIf="!(userDetail.key==='jwttoken')">
+                <td>{{userDetail.key}}</td>
+                <td>:</td>
+                <td>{{userDetail.value}}</td>
+              </div>
+            </tr>
+              </table>  
+              <!-- <h5 class="card-title">Logged-in user name</h5>
               <h6 class="card-subtitle mb-2 text-muted">investor/admin/startup</h6>
-              <p class="card-text">User details if any</p>
+              <p class="card-text">User details if any</p> -->
             </div>
           </div>
         </div>
@@ -98,3 +99,23 @@
         </div>
     </div>
 </div>
+
+<!-- Add idea -->
+<ng-template #addIdea let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+       test
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
