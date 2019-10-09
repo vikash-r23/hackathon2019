@@ -35,4 +35,8 @@ export class SignInComponent implements OnInit {
       this.router.navigate(['/ideas']);
     });
   }
+
+  redirectTo() {
+    this.router.navigate(['/signUp']);
+  }
 }
