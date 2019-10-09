@@ -20,7 +20,6 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateIdeaComponent } from './create-idea/create-idea.component'; // <== add the imports!
 
-import { AddIdeaComponent } from './add-idea/add-idea.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +31,7 @@ import { AddIdeaComponent } from './add-idea/add-idea.component';
     routingComponents,
     SignInComponent,
     SignUpComponent,
-    CreateIdeaComponent,
-    AddIdeaComponent
+    CreateIdeaComponent
   ],
   imports: [
     FormsModule,

@@ -28,3 +28,14 @@ $white-color: #fff;
         }
     }
 }
+.nav-item {
+    .dropdown-menu {
+        position: absolute;
+        padding-top: 5px;
+        padding-bottom: 0px;
+        
+        a {
+            color: #000;
+        }
+    }
+}

@@ -2,24 +2,22 @@
 $primary-color: #0c2340;
 $white-color: #fff;
 
-.main-container {
+.header-container {
     background-color: $primary-color;
-    height: 100vh;
-    position: relative;
 }
 .signin-container {
     background-color: $white-color;
     border-radius: 10px;
-    height:42%;
-    left: 50%;
+    float: right;
+    height:auto;
     padding: 40px;
     position: absolute;
+    right: 3%;
     text-align: center;
-    top:50%;
-    transform: translate(-50%,-50%);
+    top:30%;
     width:35%;
 }
-.form-field input[type="text"] {
+.form-field input[type="text"], input[type="password"] {
     border: 1px solid #909090;
     border-radius: 10px;
     font-size: 17px;
@@ -30,7 +28,7 @@ $white-color: #fff;
     width: 100%;
 }
 
-.form-field input[type="button"] {
+.form-field button {
     background: $primary-color;
     border: 0 none;
     border-radius: 15px;
@@ -44,4 +42,8 @@ $white-color: #fff;
     float: right;
     margin-top: 10px;
     color: #007bff;
+
+    a {
+        text-decoration: underline;
+    }
 }
