@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IdeasService } from "../../dataService/ideas.service";
+import { SignInService } from 'src/dataService/sign-in.service';
 
 @Component({
   selector: 'app-ideas',
@@ -11,11 +12,11 @@ export class IdeasComponent implements OnInit {
   ideaDetailsTitle = "";
   ideaDetailsData = "";
   ideasData = [];
-
+  userDetails={"userName":"raghu","userType":"Investor"};
   constructor(private _ideasService: IdeasService) { }
 
   ngOnInit() {
-    this.getIdeaData();
+    this.getIdeaData();    
   }
 
   knowMoreClick(data) {
