@@ -5,13 +5,6 @@ $white-color: #fff;
 .header-container {
     background-color: $primary-color;
 }
-.main-container {
-    // background-image: url('../../assets/images/new_bg.png');
-    // background-repeat: no-repeat;
-    // height: 100vh;
-    // width: 100%;
-    // position: relative;
-}
 .signin-container {
     background-color: $white-color;
     border-radius: 10px;
@@ -24,7 +17,7 @@ $white-color: #fff;
     top:30%;
     width:35%;
 }
-.form-field input[type="text"] {
+.form-field input[type="text"], input[type="password"] {
     border: 1px solid #909090;
     border-radius: 10px;
     font-size: 17px;
@@ -53,24 +46,4 @@ $white-color: #fff;
     a {
         text-decoration: underline;
     }
-}
-.db-logo {
-    margin-left: 18px;
-    left:0;
-    position: absolute;
-
-    img {
-        margin-top: 10px;
-    }
-}
-.app-logo {
-    float: right;
-    margin-top: 10px;
-    margin-right: 45px;
-    right:0;
-    position: absolute;
-}
-.bg-img {
-    position: relative;
-    height: 100vh;
 }
