@@ -12,7 +12,7 @@ export class SignInService {
   
   authenticateUser(body: any): Observable<any> {
     
-    return this._httpCall.post("http://localhost:8181/api/user/authenticate", body);
+    return this._httpCall.post("http://griiin.southindia.cloudapp.azure.com:8080/api/user/authenticate", body);
     
   }
 }

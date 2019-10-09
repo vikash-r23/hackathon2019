@@ -48,6 +48,11 @@ export class SignUpComponent implements OnInit{
         return;
     }
     console.log("valid");
+    //console.log(this.signUpForm.value);
+    delete this.signUpForm.value['acceptTerms'];
+    //console.log(this.signUpForm.value);
+    this.signUpForm.value["enabled"]="Y";
+    console.log(JSON.stringify(this.signUpForm.value));
     this.signUpService.signMeUp(this.signUpForm.value).subscribe((data)=>{
       this.router.navigate(['/signIn']);
     });

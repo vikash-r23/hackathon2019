@@ -7,14 +7,12 @@ import { Options } from 'selenium-webdriver';
   providedIn: 'root'
 })
 export class SignUpService {
-  private urlcategory = "http://localhost:8181/api/user/register";
+  private urlcategory = "http://griiin.southindia.cloudapp.azure.com:8080/api/user/register";
 
   constructor(private _httpCall: HttpClient) { }
   
-  signMeUp(body: any): Observable<any> {
-    var data = JSON.stringify(body);
-
-    console.log("Lolololol");
-    return this._httpCall.post("http://localhost:8181/api/user/register", data);
+  signMeUp(body: Object): Observable<Object> {
+    return this._httpCall.post(this.urlcategory, body);
   }
 }
+
