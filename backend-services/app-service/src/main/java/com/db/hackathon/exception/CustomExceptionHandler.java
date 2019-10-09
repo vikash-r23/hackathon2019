@@ -7,6 +7,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -39,7 +40,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 		return new ResponseEntity<Object>(error, HttpStatus.BAD_REQUEST);
 	}
 	
-	@ExceptionHandler({AuthenticationCredentialsNotFoundException.class,UsernameNotFoundException.class})
+	@ExceptionHandler({AuthenticationCredentialsNotFoundException.class,UsernameNotFoundException.class,DisabledException.class})
 	public final ResponseEntity<Object> handleBadRequest(Exception ex, WebRequest request) {
 		List<String> details = new ArrayList<>();
 		details.add(ex.getMessage());
