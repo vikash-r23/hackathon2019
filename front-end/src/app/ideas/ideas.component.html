@@ -23,6 +23,19 @@
             <li class="nav-item">
               <a class="nav-link" routerLink="./startUps" routerLinkActive="active" skipLocationChange>Contact</a>
             </li>
+            <li class="nav-item dropdown" dropdown>
+                    <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                      Basic dropdown<span class="caret"></span></a>
+                    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
+                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
+                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
+                      <div class="divider dropdown-divider"></div>
+                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
+                    </div>
+                  </li>
+            
+            
     </ul>
     <form class="form-inline" [formGroup]="myForm">
       <div class="btn-group dropleft">
@@ -32,9 +45,17 @@
         <div class="dropdown-menu">
           <div class="card" style="width: 18rem; border-style: none">
             <div class="card-body">
-              <h5 class="card-title">Logged-in user name</h5>
+              <table>
+              <tr *ngFor="let userDetail of userDetails | keyvalue"><div *ngIf="!(userDetail.key==='jwttoken')">
+                <td>{{userDetail.key}}</td>
+                <td>:</td>
+                <td>{{userDetail.value}}</td>
+              </div>
+            </tr>
+              </table>  
+              <!-- <h5 class="card-title">Logged-in user name</h5>
               <h6 class="card-subtitle mb-2 text-muted">investor/admin/startup</h6>
-              <p class="card-text">User details if any</p>
+              <p class="card-text">User details if any</p> -->
             </div>
           </div>
         </div>
