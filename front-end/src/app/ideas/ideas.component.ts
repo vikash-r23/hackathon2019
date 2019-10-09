@@ -10,6 +10,8 @@ export class IdeasComponent implements OnInit {
 
   ideaDetailsTitle = "";
   ideaDetailsData = "";
+  addIdeaTitle = '';
+  addIdeaModal = '';
   ideasData = [];
 
   constructor(private _ideasService: IdeasService) { }
@@ -22,6 +24,11 @@ export class IdeasComponent implements OnInit {
     console.log('data =>', data);
     this.ideaDetailsData = data.details;
     this.ideaDetailsTitle = data.name;
+  }
+
+  addIdea() {
+    this.addIdeaModal = '';
+    this.addIdeaTitle = 'Add Idea';
   }
 
   getIdeaData() {
