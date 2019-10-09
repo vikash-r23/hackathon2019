@@ -45,9 +45,17 @@
         <div class="dropdown-menu">
           <div class="card" style="width: 18rem; border-style: none">
             <div class="card-body">
-              <h5 class="card-title">Logged-in user name</h5>
+              <table>
+              <tr *ngFor="let userDetail of userDetails | keyvalue"><div *ngIf="!(userDetail.key==='jwttoken')">
+                <td>{{userDetail.key}}</td>
+                <td>:</td>
+                <td>{{userDetail.value}}</td>
+              </div>
+            </tr>
+              </table>  
+              <!-- <h5 class="card-title">Logged-in user name</h5>
               <h6 class="card-subtitle mb-2 text-muted">investor/admin/startup</h6>
-              <p class="card-text">User details if any</p>
+              <p class="card-text">User details if any</p> -->
             </div>
           </div>
         </div>
