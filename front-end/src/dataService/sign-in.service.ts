@@ -8,8 +8,11 @@ import { Observable } from "rxjs/internal/Observable";
 export class SignInService {
 
   constructor(private _httpCall: HttpClient) { }
-
+  public userDetails;
+  
   authenticateUser(body: any): Observable<any> {
+    
     return this._httpCall.post("http://localhost:8181/api/user/authenticate", body);
+    
   }
 }

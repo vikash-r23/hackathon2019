@@ -33,6 +33,7 @@ export class SignInComponent implements OnInit {
 
     this.signInService.authenticateUser(userDetails).subscribe((data)=>{
       this.router.navigate(['/ideas']);
+      this.signInService.userDetails=data;
     });
   }
 

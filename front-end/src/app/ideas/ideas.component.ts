@@ -12,11 +12,12 @@ export class IdeasComponent implements OnInit {
   ideaDetailsTitle = "";
   ideaDetailsData = "";
   ideasData = [];
-  userDetails={"userName":"raghu","userType":"Investor"};
-  constructor(private _ideasService: IdeasService) { }
+  userDetails;
+  constructor(private _ideasService: IdeasService,private _signinService:SignInService) { }
 
   ngOnInit() {
     this.getIdeaData();    
+    this.userDetails=this._signinService.userDetails;
   }
 
   knowMoreClick(data) {
