@@ -8,7 +8,7 @@ import { environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class SignUpService {
-  private urlcategory = "http://localhost:8181/api/user/register";
+  private urlcategory = "http://griiin.southindia.cloudapp.azure.com:8080/api/user/register";
 
   constructor(private _httpCall: HttpClient) { }
   
@@ -19,3 +19,4 @@ export class SignUpService {
     return this._httpCall.post(environment.apiUrl, data);
   }
 }
+
