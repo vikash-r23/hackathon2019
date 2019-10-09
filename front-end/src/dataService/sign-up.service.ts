@@ -16,7 +16,7 @@ export class SignUpService {
     var data = JSON.stringify(body);
 
     console.log("Lolololol");
-    return this._httpCall.post(environment.apiUrl, data);
+    return this._httpCall.post(environment.apiUrl+"api/user/register", data);
   }
 }
 
