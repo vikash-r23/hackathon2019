@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IdeasService } from "../../dataService/ideas.service";
+import { SignInService } from 'src/dataService/sign-in.service';
 
 @Component({
   selector: 'app-ideas',
@@ -13,11 +14,12 @@ export class IdeasComponent implements OnInit {
   addIdeaTitle = '';
   addIdeaModal = '';
   ideasData = [];
-
-  constructor(private _ideasService: IdeasService) { }
+  userDetails;
+  constructor(private _ideasService: IdeasService,private _signinService:SignInService) { }
 
   ngOnInit() {
-    this.getIdeaData();
+    this.getIdeaData();    
+    this.userDetails=this._signinService.userDetails;
   }
 
   knowMoreClick(data) {
