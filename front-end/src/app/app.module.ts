@@ -16,6 +16,9 @@ import { IdeasComponent } from './ideas/ideas.component';
 
 import { IdeasService } from "../dataService/ideas.service";
 import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateIdeaComponent } from './create-idea/create-idea.component'; // <== add the imports!
 
 @NgModule({
   declarations: [
@@ -25,9 +28,13 @@ import { SignInComponent } from './sign-in/sign-in.component';
     StartUpsComponent,
     IdeasComponent,
     routingComponents,
-    SignInComponent
+    SignInComponent,
+    SignUpComponent,
+    CreateIdeaComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

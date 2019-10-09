@@ -6,14 +6,18 @@ import { IdeasComponent } from "./ideas/ideas.component";
 import { AdminComponent } from "./admin/admin.component";
 import { InvestorComponent } from "./investor/investor.component";
 import { StartUpsComponent } from "./start-ups/start-ups.component";
+import {SignUpComponent} from "./sign-up/sign-up.component";
+import {CreateIdeaComponent} from "./create-idea/create-idea.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/signIn', pathMatch: 'full' },
+  {path: '', redirectTo: '/signIn', pathMatch: 'full' },
   {path:'signIn', component: SignInComponent},
   {path:'ideas', component: IdeasComponent},
   {path:'admin', component: AdminComponent},
   {path:'investor', component: InvestorComponent},
-  {path:'startUps', component: StartUpsComponent}
+  {path:'startUps', component: StartUpsComponent},
+  {path:'signUp', component: SignUpComponent},
+  {path:'createIdea', component: CreateIdeaComponent},
 ];
 
 @NgModule({
@@ -21,4 +25,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [IdeasComponent, AdminComponent, InvestorComponent, StartUpsComponent];
+export const routingComponents = [IdeasComponent, AdminComponent, InvestorComponent, StartUpsComponent, SignUpComponent, CreateIdeaComponent];
