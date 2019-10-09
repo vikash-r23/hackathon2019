@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IdeasComponent } from '../ideas/ideas.component';
 import { IdeasService } from 'src/dataService/ideas.service';
+import { SignInService } from 'src/dataService/sign-in.service';
 
 @Component({
   selector: 'app-create-idea',
@@ -13,7 +14,7 @@ export class CreateIdeaComponent implements OnInit {
   createIdeaForm : FormGroup;
   submitted = false;
 
-  constructor(private formBuilder : FormBuilder, private ideaService : IdeasService){}
+  constructor(private formBuilder : FormBuilder, private ideaService : IdeasService, private signinService : SignInService){}
 
   ngOnInit(){
     console.log("INIT");
@@ -46,7 +47,9 @@ export class CreateIdeaComponent implements OnInit {
       console.log("Invalid!!");
       
     }
-    this.ideaService.createIdea(this.createIdeaForm.value)
+    const body = this.createIdeaForm.value;
+    body["pitcherId"] = this.signinService.userDetails.userId;
+    this.ideaService.createIdea(body,this.signinService.userDetails.jwttoken).subscribe(data => console.log(data));
     console.log(this.createIdeaForm.value);
   }
 
