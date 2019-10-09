@@ -8,7 +8,7 @@ import { InvestorComponent } from "./investor/investor.component";
 import { StartUpsComponent } from "./start-ups/start-ups.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/signIn', pathMatch: 'full' },
+  { path: '', redirectTo: '/ideas', pathMatch: 'full' },
   {path:'signIn', component: SignInComponent},
   {path:'ideas', component: IdeasComponent},
   {path:'admin', component: AdminComponent},

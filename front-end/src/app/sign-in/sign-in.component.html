@@ -2,7 +2,7 @@
     <form [formGroup]="signInForm">
         <div class="signin-container" formFieldContainer>
             <span class="form-field">
-                <input type="text" #username name="username" placeholder="Username" formControlName="username" required/>
+                <input type="text" #username name="username" placeholder="Username" autocomplete="off" formControlName="username" required/>
                 <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
                     <div *ngIf="username.errors.required">
                     Username is required.

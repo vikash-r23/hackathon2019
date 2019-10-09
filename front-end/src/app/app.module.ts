@@ -17,6 +17,7 @@ import { IdeasComponent } from './ideas/ideas.component';
 
 import { IdeasService } from "../dataService/ideas.service";
 import { SignInComponent } from './sign-in/sign-in.component';
+import { AddIdeaComponent } from './add-idea/add-idea.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     StartUpsComponent,
     IdeasComponent,
     routingComponents,
-    SignInComponent
+    SignInComponent,
+    AddIdeaComponent
   ],
   imports: [
     BrowserModule,
