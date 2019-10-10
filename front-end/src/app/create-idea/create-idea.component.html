@@ -1,76 +1,75 @@
 <div class="main-container">
     <div class="signin-container">
-        <form>
+        <form [formGroup]="createIdeaForm" (ngSubmit)="onSubmit()">
             <div class = "form-group form-field">
-                <label for = "ideaName">Idea Name</label>
-                <input required ngModel name="ideaName" #ideaName = "ngModel" id = "ideaName" type="text" class="form-control" (change) = "log(ideaName)">
-                <div class="alert alert-danger"  *ngIf="ideaName.touched && !ideaName.valid" >Idea Name is required.</div>
+                <label for = "ideaName">Idea Name*</label>
+                <input required formControlName="ideaName" id = "ideaName" type="text" class="form-control">
+                <div class="alert alert-danger"  *ngIf="submitted && f.ideaName.errors?.required" >Idea Name is required.</div>
             </div>
             <div class = "form-group form-field">
-                <label for = "description">Description</label>
-                <input required ngModel name="description" #description = "ngModel" id = "description" type="text" class="form-control" (change) = "log(description)">
-                <div class="alert alert-danger"  *ngIf="description.touched && !description.valid" >Description is required.</div>
+                <label for = "description">Description*</label>
+                <input required formControlName="description" id = "description" type="text" class="form-control">
+                <div class="alert alert-danger"  *ngIf="submitted && f.ideaName.errors?.required" >Description is required.</div>
             </div>
             <div class = "form-group form-field">
-                <label for = "company">Company</label>
-                <input required ngModel name="company" #company = "ngModel" id = "company" type="text" class="form-control" (change) = "log(company)">
-                <div class="alert alert-danger"  *ngIf="company.touched && !company.valid" >Company is required.</div>
+                <label for = "company">Company*</label>
+                <input required  formControlName="company" id = "company" type="text" class="form-control">
+                <div class="alert alert-danger"  *ngIf="submitted && f.company.errors?.required" >Company is required.</div>
             </div>
             <div class = "form-group form-field">
-                <label for = "usp">Unique Selling Point</label>
-                <input required ngModel name="usp" #usp = "ngModel" id = "usp" type="text" class="form-control" (change) = "log(usp)">
-                <div class="alert alert-danger"  *ngIf="usp.touched && !usp.valid" >USP is required.</div>
+                <label for = "usp">Unique Selling Point*</label>
+                <input required  formControlName="usp"  id = "usp" type="text" class="form-control">
+                <div class="alert alert-danger"  *ngIf="submitted && f.usp.errors?.required" >USP is required.</div>
             </div>
             <div class = "form-group form-field">
-                <label for = "roi">Return on Investment</label>
-                <input required ngModel name="roi" #roi = "ngModel" id = "roi" type="text" class="form-control" (change) = "log(roi)">
-                <div class="alert alert-danger"  *ngIf="roi.touched && !roi.valid" >ROI is required.</div>
+                <label for = "roi">Return on Investment*</label>
+                <input required  formControlName="roi" id = "roi" type="text" class="form-control">
+                <div class="alert alert-danger"  *ngIf="submitted && f.roi.errors?.required" >ROI is required.</div>
             </div>
             <div class = "form-group form-field">
-                <label for = "address">Address</label>
-                <input required ngModel name="address" #address = "ngModel" id = "address" type="text" class="form-control" (change) = "log(address)">
-                <div class="alert alert-danger"  *ngIf="address.touched && !address.valid" >Address is required.</div>
+                <label for = "address">Address*</label>
+                <input required  formControlName="address" id = "address" type="text" class="form-control">
+                <div class="alert alert-danger"  *ngIf="submitted && f.address.errors?.required" >Address is required.</div>
             </div>
             <div class = "form-group form-field">
-                <label for = "contact">Contact</label>
-                <input minlength="10" maxlength="10" required ngModel name="contact" #contact = "ngModel" id = "contact" type="tel" class="form-control" (change) = "log(contact)">
-                <div class="alert alert-danger"  *ngIf="contact.touched && contact.errors?.required" >Contact number is required.</div>
-                <div class="alert alert-danger"  *ngIf="contact.touched && contact.errors?.minlength">Contact number must be 10 digits long.</div>
-                <div class="alert alert-danger"  *ngIf="contact.touched && contact.errors?.maxlength">Contact number must be 10 digits long.</div>
+                <label for = "contact">Contact*</label>
+                <input required  formControlName="contact" id = "contact" type="tel" class="form-control">
+                <div class="alert alert-danger"  *ngIf="submitted && f.contact.errors?.required" >Contact number is required.</div>
+                <div class="alert alert-danger"  *ngIf="submitted && f.contact.errors?.minlength">Contact number must be 10 digits long.</div>
+                <div class="alert alert-danger"  *ngIf="submitted && f.contact.errors?.maxlength">Contact number must be 10 digits long.</div>
             </div>
             <div class = "form-group form-field">
                 <label for = "alternateContact">Alternate Contact</label>
-                <input minlength="10" maxlength="10" required ngModel name="alternateContact" #alternateContact = "ngModel" id = "alternateContact" type="tel" class="form-control" (change) = "log(alternateContact)">
-                <div class="alert alert-danger"  *ngIf="alternateContact.touched && alternateContact.errors?.required" >Contact number is required.</div>
-                <div class="alert alert-danger"  *ngIf="alternateContact.touched && alternateContact.errors?.minlength">Contact number must be 10 digits long.</div>
-                <div class="alert alert-danger"  *ngIf="alternateContact.touched && alternateContact.errors?.maxlength">Contact number must be 10 digits long.</div>
+                <input  formControlName="alternateContact" id = "alternateContact" type="tel" class="form-control">
+                <div class="alert alert-danger"  *ngIf="submitted && f.alternateContact.errors?.minlength">Contact number must be 10 digits long.</div>
+                <div class="alert alert-danger"  *ngIf="submitted && f.alternateContact.errors?.maxlength">Contact number must be 10 digits long.</div>
             </div>
             <div class = "form-group form-field">
-                <label for = "email">Email ID</label>
-                <input id = "email" required ngModel name="email" #email = "ngModel" type="text" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-                    <div class="alert alert-danger"  *ngIf="email.touched && email.errors?.required" >Email ID is required.</div>
-                    <div class = "alert alert-danger" *ngIf = "email.touched && email.errors?.pattern">Email ID is not valid.</div>
+                <label for = "email">Email ID*</label>
+                <input id = "email" required  formControlName="email" type="text" class="form-control">
+                    <div class="alert alert-danger"  *ngIf="submitted && f.email.errors?.required" >Email ID is required.</div>
+                    <div class = "alert alert-danger" *ngIf = "submitted && f.email.errors?.email">Email ID is not valid.</div>
             </div>
             <div class = "form-group form-field">
                 <label for = "website">Website</label>
-                <input id = "website" ngModel name="website" #website = "ngModel" type="text" class="form-control"  pattern="https?://.+">
-                <div class = "alert alert-danger" *ngIf = "website.touched && website.errors?.pattern">Website not valid.</div>
+                <input id = "website"  formControlName="website" type="text" class="form-control">
+                <div class = "alert alert-danger" *ngIf = "submitted && f.website.errors?.pattern">Website not valid.</div>
             </div>
            
             <div class = "form-group form-field">
                 <label for = "insta">Instagram handle</label>
-                <input id = "insta" ngModel name="insta" #insta = "ngModel" type="text" class="form-control">
+                <input id = "insta"  formControlName="insta" type="text" class="form-control">
             </div>
             <div class = "form-group form-field">
                 <label for = "youtube">Youtube</label>
-                <input id = "youtube" ngModel name="youtube" #youtube = "ngModel" type="text" class="form-control">
+                <input id = "youtube"  formControlName="youtube" type="text" class="form-control">
             </div>
             <div class = "form-group form-field">
                 <label for = "linkedin">Linkedin</label>
-                <input id = "linkedin" ngModel name="linkedin" #linkedin = "ngModel" type="text" class="form-control">
+                <input id = "linkedin"  name="linkedin" type="text" class="form-control">
             </div>
             <div class="form-field">
-                <input type="button" name="submitDetails" value="Submit"/>
+                <button type="submit" name="submitDetails" value="Submit">Submit</button>
             </div>
         </form>
     </div>
