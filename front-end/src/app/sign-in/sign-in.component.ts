@@ -9,9 +9,8 @@ import { SignInService } from "../../dataService/sign-in.service"
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-
   signInForm: FormGroup;
-
+  submitted= false;
   constructor(private signInService: SignInService, private formBuilder: FormBuilder, private router:Router) { }
 
   ngOnInit() {
@@ -20,18 +19,37 @@ export class SignInComponent implements OnInit {
       password: ['', Validators.required]
     });
   }
+  get f() { return this.signInForm.controls; }
 
-  authenticateUser(username, password) {
+  onSubmit()
+  {
+    this.submitted = true;
     if (this.signInForm.invalid) {
       // return;
+      console.log("Invalid");
+      return;
     }
+    else{
+      this.authenticateUser();
+    }
+  }
+  
+  authenticateUser() {
+    this.submitted = true;
+    if (this.signInForm.invalid) {
+      // return;
+      console.log("Invalid");
+      return;
+    }
+
     let userDetails = {
-      username: username,
-      password: password
+      username: this.signInForm.get('username').value,
+      password: this.signInForm.get('password').value
     };
 
     this.signInService.authenticateUser(userDetails).subscribe((data)=>{
       this.router.navigate(['/ideas']);
+      this.signInService.userDetails=data;
     });
   }
 

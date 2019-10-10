@@ -1,28 +1,34 @@
+<!-- <div class="container-fluid header-container">
+    <nav class="navbar navbar-dark header">
+      <a class="navbar-brand"><img src="../../assets/images/logo.jpg" width="100" height="60" alt=""></a>
+    </nav>
+</div> -->
 <div class="main-container">
-    <form [formGroup]="signInForm">
-        <div class="signin-container" formFieldContainer>
-            <span class="form-field">
-                <input type="text" #username name="username" placeholder="Username" autocomplete="off" formControlName="username" required/>
-                <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
-                    <div *ngIf="username.errors.required">
-                    Username is required.
-                    </div>
+    <img class="bg-img" src="assets/images/bg.png" width="100%">
+        <a class="db-logo"><img src="assets/images/logo.jpg" width="100" height="60" alt=""></a>
+        <a class="app-logo"><img src="assets/images/app_logo.png" width="150" height="70" alt=""></a>
+    <div class="signin-container">
+        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+            <div class="form-group form-field">
+                <input formControlName="username" required name="username" id="username" type="text"
+                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Username*">
+                <div *ngIf="submitted && f.username.errors">
+                    <div *ngIf="f.username.errors.required">Username is required.</div>
                 </div>
-            </span>
-            <span class="form-field">
-                <input type="text" #password name="password" placeholder="Password" formControlName="password" required/>
-                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
-                    <div *ngIf="password.errors.required">
-                    Password is required.
-                    </div>
+            </div>
+            <div class="form-group form-field">
+                <input id="password" required name="password" type="password" formControlName="password"
+                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password*">
+                <div *ngIf="submitted && f.password.errors">
+                    <div *ngIf="f.password.errors.required">Password is required.</div>
                 </div>
-            </span>
-            <span class="form-field">
-                <input type="button" name="signin" value="Sign In" (click)="authenticateUser(username.value, password.value)"/>
-            </span>
+            </div>
+            <div class="form-field">
+                <button type="submit" >Sign In</button>
+            </div>
             <span class="form-field signUpLink">
-                <a (click)="redirectTo()">Sign Up</a>
+                    <a (click)="redirectTo()">Sign Up</a>
             </span>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>

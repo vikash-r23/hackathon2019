@@ -30,7 +30,7 @@ import com.db.hackathon.constants.UserStatus;
 import com.db.hackathon.constants.UserType;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_info")
 public class User {
 
 	@Id

@@ -68,7 +68,10 @@ public class UserResource {
 		final String token = jwtTokenUtil.generateToken(userDetails);
 		String userId = Iterables.get(userDetails.getAuthorities(), 0).getAuthority();
 		String role = Iterables.get(userDetails.getAuthorities(), 1).getAuthority();
-		return ResponseEntity.ok(new JwtResponse(userId,userDetails.getUsername(),role,token));
+		String firstName = Iterables.get(userDetails.getAuthorities(), 2).getAuthority();
+		String lastName = Iterables.get(userDetails.getAuthorities(), 3).getAuthority();
+		JwtResponse j=new JwtResponse(userId,userDetails.getUsername(),role,token, firstName, lastName);
+		return new ResponseEntity<JwtResponse>(j, HttpStatus.OK);
 	}
 
 	private void authenticate(String username, String password) throws Exception {

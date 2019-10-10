@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { MyDateRangePickerModule } from 'mydaterangepicker';
+import { NgbModule, NgbTimepicker } from '@ng-bootstrap/ng-bootstrap';
+
 import { AgGridModule } from "ag-grid-angular";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
@@ -18,12 +21,13 @@ import { IdeasService } from "../dataService/ideas.service";
 import { InvestorService } from "../dataService/investor.service";
 import { SignInService } from "../dataService/sign-in.service";
 import { StartUpService } from "../dataService/start-up.service";
+import { AdminService } from "../dataService/admin.service";
+
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateIdeaComponent } from './create-idea/create-idea.component'; // <== add the imports!
 
-import { AddIdeaComponent } from './add-idea/add-idea.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +39,7 @@ import { AddIdeaComponent } from './add-idea/add-idea.component';
     routingComponents,
     SignInComponent,
     SignUpComponent,
-    CreateIdeaComponent,
-    AddIdeaComponent
+    CreateIdeaComponent
   ],
   imports: [
     FormsModule,
@@ -48,9 +51,11 @@ import { AddIdeaComponent } from './add-idea/add-idea.component';
     NgxChartsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MyDateRangePickerModule,
+    NgbModule,
     AgGridModule.withComponents([AppComponent])
   ],
-  providers: [IdeasService, InvestorService, SignInService, StartUpService],
+  providers: [IdeasService, InvestorService, SignInService, StartUpService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

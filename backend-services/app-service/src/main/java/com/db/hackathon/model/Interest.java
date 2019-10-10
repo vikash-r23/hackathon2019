@@ -1,11 +1,20 @@
 package com.db.hackathon.model;
 
-import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name="interest")
+@Table(name="Interest")
 public class Interest {
 
     @Id
@@ -21,6 +30,16 @@ public class Interest {
 
     @Column(name="comments")
     private String comments;
+    
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "created_on", nullable = false)
+	@CreationTimestamp
+	private Date created;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "modified_on", nullable = false)
+	@UpdateTimestamp
+	private Date updated;
 
     public Long getInterestId() {
         return interestId;
@@ -53,5 +72,23 @@ public class Interest {
     public void setComments(String comments) {
         this.comments = comments;
     }
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public Date getUpdated() {
+		return updated;
+	}
+
+	public void setUpdated(Date updated) {
+		this.updated = updated;
+	}
+    
+    
 }
 

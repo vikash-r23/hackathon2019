@@ -3,95 +3,122 @@ $primary-color: #0c2340;
 $white-color: #fff;
 
 .main-container {
-    background-color: $primary-color;
     height: 100vh;
-    position: relative;
-    overflow-y: scroll;
+    background-color: $primary-color;
+
 }
-.signin-container {
+.createIdeaContainer {
+    background-color: $primary-color;
+}
+.create-idea-container {
     background-color: $white-color;
     border-radius: 10px;
-    height:90vh;
-    left: 50%;
-    padding: 40px;
+    height:80%;
+    left: 49%;
+    padding: 23px;
     position: absolute;
     text-align: left;
-    top: 5%;
+    top: 13%;
     transform: translate(-50%,0);
-    width:55%;
+    width:50%;
     overflow-y: scroll;
     padding-top: 20px;
-}
-.textarea{
-    border: 1px solid #909090;
-    border-radius: 10px;
-    font-size: 17px;
-    height:22%;
-    margin-bottom: 29px;
-    outline: 0;
-    padding: 9px;
-    width: 100%;
 }
 .form-field input[type="text"] {
     border: 1px solid #909090;
     border-radius: 10px;
     font-size: 17px;
     height:22%;
-    margin-bottom: 29px;
     outline: 0;
     padding: 9px;
-    width: 100%;
+    width: 65%;
+    display: inline-block;
 }
 
+.form-field label{
+    font-size: 17px;
+    height:22%;
+    outline: 0;
+    padding: 9px;
+    width: 35%;
+    float: left;
+
+    span {
+        color: #f91228;
+    }
+}
+
+.form-control.ng-pristine.ng-touched.ng-invalid {
+    border: 1px solid #FA8072;
+    border-radius: 10px;
+}
 .form-field select {
     border: 1px solid #909090;
     border-radius: 10px;
     font-size: 17px;
     height:22%;
-    margin-bottom: 29px;
     outline: 0;
     padding: 9px;
-    width: 100%;
+    width: 65%;
+    display: inline-block;
 }
 .form-field input[type="password"]  {
     border: 1px solid #909090;
     border-radius: 10px;
     font-size: 17px;
     height:22%;
-    margin-bottom: 29px;
     outline: 0;
     padding: 9px;
-    width: 100%;
+    width: 65%;
+    display: inline-block;
 }
 .alert{
-    border: 1px solid #909090;
-    border-radius: 10px;
     font-size: 15px;
-    height:10%;
-    margin-bottom: 20px;
+    height:5%;
     outline: 0;
-    //padding-top: 0%;
-    //padding: 9px;
-    width: 100%;
+    width: 65%;
+    display: inline-block;
 }
 .form-field input[type="tel"] {
     border: 1px solid #909090;
     border-radius: 10px;
     font-size: 17px;
     height:22%;
-    margin-bottom: 29px;
     outline: 0;
     padding: 9px;
-    width: 100%;
+    width: 65%;
 }
 
-.form-field input[type="button"] {
+.form-field button{
     background: $primary-color;
     border: 0 none;
     border-radius: 15px;
     color: $white-color;
-    font-size: 20px;
-    height:48px;
+    font-size: 17px;
+    height:43px;
     outline: 0;
-    width: 100%;
+    width: 50%;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 20px; 
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 20px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    border-radius: 20px;
+  }

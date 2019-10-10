@@ -2,3 +2,23 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
 }
+.db-logo {
+    margin-left: 18px;
+    left:0;
+    position: absolute;
+
+    img {
+        margin-top: 10px;
+    }
+}
+.app-logo {
+    float: right;
+    margin-top: 10px;
+    margin-right: 45px;
+    right:0;
+    position: absolute;
+}
+.bg-img {
+    position: relative;
+    height: 100vh;
+}
