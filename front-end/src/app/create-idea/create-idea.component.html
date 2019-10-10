@@ -1,76 +1,76 @@
-<div class="main-container">
-    <div class="signin-container">
+    <!-- <div class="create-idea-container"> -->
         <form [formGroup]="createIdeaForm" (ngSubmit)="onSubmit()">
-            <div class = "form-group form-field">
-                <label for = "ideaName">Idea Name*</label>
-                <input required formControlName="ideaName" id = "ideaName" type="text" class="form-control">
-                <div class="alert alert-danger"  *ngIf="submitted && f.ideaName.errors?.required" >Idea Name is required.</div>
+            <div class="form-group form-field">
+                <label for="ideaName">Idea Name<span>*</span></label>
+                <input required formControlName="ideaName" id="ideaName" type="text" class="form-control">
+                <div *ngIf="submitted && f.ideaName.errors?.required">Idea Name is required.</div>
             </div>
-            <div class = "form-group form-field">
-                <label for = "description">Description*</label>
-                <input required formControlName="description" id = "description" type="text" class="form-control">
-                <div class="alert alert-danger"  *ngIf="submitted && f.ideaName.errors?.required" >Description is required.</div>
+            <div class="form-group form-field">
+                <label for="description">Description<span>*</span></label>
+                <input required formControlName="description" id="description" type="text" class="form-control">
+                <div *ngIf="submitted && f.ideaName.errors?.required">Description is required.</div>
             </div>
-            <div class = "form-group form-field">
-                <label for = "company">Company*</label>
-                <input required  formControlName="company" id = "company" type="text" class="form-control">
-                <div class="alert alert-danger"  *ngIf="submitted && f.company.errors?.required" >Company is required.</div>
+            <div class="form-group form-field">
+                <label for="company">Company<span>*</span></label>
+                <input required formControlName="company" id="company" type="text" class="form-control">
+                <div *ngIf="submitted && f.company.errors?.required">Company is required.</div>
             </div>
-            <div class = "form-group form-field">
-                <label for = "usp">Unique Selling Point*</label>
-                <input required  formControlName="usp"  id = "usp" type="text" class="form-control">
-                <div class="alert alert-danger"  *ngIf="submitted && f.usp.errors?.required" >USP is required.</div>
+            <div class="form-group form-field">
+                <label for="usp">Unique Selling Point<span>*</span></label>
+                <input required formControlName="usp" id="usp" type="text" class="form-control">
+                <div *ngIf="submitted && f.usp.errors?.required">USP is required.</div>
             </div>
-            <div class = "form-group form-field">
-                <label for = "roi">Return on Investment*</label>
-                <input required  formControlName="roi" id = "roi" type="text" class="form-control">
-                <div class="alert alert-danger"  *ngIf="submitted && f.roi.errors?.required" >ROI is required.</div>
+            <div class="form-group form-field">
+                <label for="roi">Return on Investment<span>*</span></label>
+                <input required formControlName="roi" id="roi" type="text" class="form-control">
+                <div *ngIf="submitted && f.roi.errors?.required">ROI is required.</div>
             </div>
-            <div class = "form-group form-field">
-                <label for = "address">Address*</label>
-                <input required  formControlName="address" id = "address" type="text" class="form-control">
-                <div class="alert alert-danger"  *ngIf="submitted && f.address.errors?.required" >Address is required.</div>
+            <div class="form-group form-field">
+                <label for="address">Address<span>*</span></label>
+                <input required formControlName="address" id="address" type="text" class="form-control">
+                <div *ngIf="submitted && f.address.errors?.required">Address is required.</div>
             </div>
-            <div class = "form-group form-field">
-                <label for = "contact">Contact*</label>
-                <input required  formControlName="contact" id = "contact" type="tel" class="form-control">
-                <div class="alert alert-danger"  *ngIf="submitted && f.contact.errors?.required" >Contact number is required.</div>
-                <div class="alert alert-danger"  *ngIf="submitted && f.contact.errors?.minlength">Contact number must be 10 digits long.</div>
-                <div class="alert alert-danger"  *ngIf="submitted && f.contact.errors?.maxlength">Contact number must be 10 digits long.</div>
+            <div class="form-group form-field">
+                <label for="contact">Contact<span>*</span></label>
+                <input required formControlName="contact" id="contact" type="tel" class="form-control">
+                <div *ngIf="submitted && f.contact.errors?.required">Contact number is required.</div>
+                <div *ngIf="submitted && f.contact.errors?.minlength">Contact number must be 10 digits long.</div>
+                <div *ngIf="submitted && f.contact.errors?.maxlength">Contact number must be 10 digits long.</div>
             </div>
-            <div class = "form-group form-field">
-                <label for = "alternateContact">Alternate Contact</label>
-                <input  formControlName="alternateContact" id = "alternateContact" type="tel" class="form-control">
-                <div class="alert alert-danger"  *ngIf="submitted && f.alternateContact.errors?.minlength">Contact number must be 10 digits long.</div>
-                <div class="alert alert-danger"  *ngIf="submitted && f.alternateContact.errors?.maxlength">Contact number must be 10 digits long.</div>
+            <div class="form-group form-field">
+                <label for="alternateContact">Alternate Contact</label>
+                <input formControlName="alternateContact" id="alternateContact" type="tel" class="form-control">
+                <div *ngIf="submitted && f.alternateContact.errors?.minlength">Contact number must be 10 digits long.
+                </div>
+                <div *ngIf="submitted && f.alternateContact.errors?.maxlength">Contact number must be 10 digits long.
+                </div>
             </div>
-            <div class = "form-group form-field">
-                <label for = "email">Email ID*</label>
-                <input id = "email" required  formControlName="email" type="text" class="form-control">
-                    <div class="alert alert-danger"  *ngIf="submitted && f.email.errors?.required" >Email ID is required.</div>
-                    <div class = "alert alert-danger" *ngIf = "submitted && f.email.errors?.email">Email ID is not valid.</div>
+            <div class="form-group form-field">
+                <label for="email">Email ID<span>*</span></label>
+                <input id="email" required formControlName="email" type="text" class="form-control">
+                <div *ngIf="submitted && f.email.errors?.required">Email ID is required.</div>
+                <div *ngIf="submitted && f.email.errors?.email">Email ID is not valid.</div>
             </div>
-            <div class = "form-group form-field">
-                <label for = "website">Website</label>
-                <input id = "website"  formControlName="website" type="text" class="form-control">
-                <div class = "alert alert-danger" *ngIf = "submitted && f.website.errors?.pattern">Website not valid.</div>
+            <div class="form-group form-field">
+                <label for="website">Website</label>
+                <input id="website" formControlName="website" type="text" class="form-control">
+                <div *ngIf="submitted && f.website.errors?.pattern">Website not valid.</div>
             </div>
-           
-            <div class = "form-group form-field">
-                <label for = "insta">Instagram handle</label>
-                <input id = "insta"  formControlName="insta" type="text" class="form-control">
+
+            <div class="form-group form-field">
+                <label for="insta">Instagram handle</label>
+                <input id="insta" formControlName="insta" type="text" class="form-control">
             </div>
-            <div class = "form-group form-field">
-                <label for = "youtube">Youtube</label>
-                <input id = "youtube"  formControlName="youtube" type="text" class="form-control">
+            <div class="form-group form-field">
+                <label for="youtube">Youtube</label>
+                <input id="youtube" formControlName="youtube" type="text" class="form-control">
             </div>
-            <div class = "form-group form-field">
-                <label for = "linkedin">Linkedin</label>
-                <input id = "linkedin"  name="linkedin" type="text" class="form-control">
+            <div class="form-group form-field">
+                <label for="linkedin">Linkedin</label>
+                <input id="linkedin" name="linkedin" type="text" class="form-control">
             </div>
-            <div class="form-field">
+            <div class="form-field" style="text-align: center">
                 <button type="submit" name="submitDetails" value="Submit">Submit</button>
             </div>
         </form>
-    </div>
-</div>
+        <!-- </div> -->
