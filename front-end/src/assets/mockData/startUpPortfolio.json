@@ -1,0 +1,91 @@
+{
+    "startUpBreakupData": [
+        {
+            "name": "Monthly Investment BreakUp",
+            "series": [
+                {
+                    "name": "January",
+                    "value": 200
+                },
+                {
+                    "name": "February",
+                    "value": 130
+                },
+                {
+                    "name": "March",
+                    "value": 380
+                },
+                {
+                    "name": "April",
+                    "value": 80
+                },
+                {
+                    "name": "May",
+                    "value": 120
+                },
+                {
+                    "name": "June",
+                    "value": 210
+                },
+                {
+                    "name": "July",
+                    "value": 230
+                },
+                {
+                    "name": "August",
+                    "value": 110
+                }
+            ]
+        }
+    ],
+    "startUpInvestmentData": [
+        {
+            "name": "HDFC",
+            "value": 350
+        },
+        {
+            "name": "YES Bank",
+            "value": 100
+        },
+        {
+            "name": "Deutsche Bank",
+            "value": 250
+        },
+        {
+            "name": "RBS",
+            "value": 200
+        }
+    ],
+    "startUpAreaBreakUpData": [
+        {
+            "name": "Marketing",
+            "value": 350
+        },
+        {
+            "name": "Manufacturing",
+            "value": 100
+        },
+        {
+            "name": "Supplies",
+            "value": 250
+        },
+        {
+            "name": "Payout",
+            "value": 200
+        }
+    ],
+    "startUpInterestsData": [
+        {
+            "name": "Like",
+            "value": 20
+        },
+        {
+            "name": "Interested",
+            "value": 30
+        },
+        {
+            "name": "Actualized",
+            "value": 5
+        }
+    ]
+}
