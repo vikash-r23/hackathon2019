@@ -71,8 +71,7 @@ public class UserResource {
 		String firstName = Iterables.get(userDetails.getAuthorities(), 2).getAuthority();
 		String lastName = Iterables.get(userDetails.getAuthorities(), 3).getAuthority();
 		JwtResponse j=new JwtResponse(userId,userDetails.getUsername(),role,token, firstName, lastName);
-		System.out.println(j.toString());
-		return ResponseEntity.ok(j);
+		return new ResponseEntity<JwtResponse>(j, HttpStatus.OK);
 	}
 
 	private void authenticate(String username, String password) throws Exception {
