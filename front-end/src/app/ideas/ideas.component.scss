@@ -39,7 +39,30 @@ $white-color: #fff;
         }
     }
 }
+#addIdeaModal {
+    .modal-dialog {
+        max-width:600px;
+    }
 
+    .modal-header {
+        padding: 5px 13px;
+        color: #fff;
+        background: #0c2340;
+
+        .modal-title {
+            font-size: 16px;
+        }
+
+        .close {
+            color: #fff;
+            padding: 11px;
+        }
+    }
+
+    .modal-footer {
+        display:none;
+    }
+}
 .my-btn{
     margin-top: 10px;
     float:right;

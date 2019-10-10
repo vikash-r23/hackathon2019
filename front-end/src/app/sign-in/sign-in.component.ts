@@ -9,9 +9,6 @@ import { SignInService } from "../../dataService/sign-in.service"
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-
-
-  
   signInForm: FormGroup;
   submitted= false;
   constructor(private signInService: SignInService, private formBuilder: FormBuilder, private router:Router) { }

@@ -36,19 +36,17 @@ export class CreateIdeaComponent implements OnInit {
   }
 
   get f(){
-    // console.log("called");
     return this.createIdeaForm.controls;
   }
 
   onSubmit(){
-    // console.log("Submitted");
     this.submitted = true;
     if(this.createIdeaForm.invalid){
       console.log("Invalid!!");
       
     }
     const body = this.createIdeaForm.value;
-    body["pitcherId"] = this.signinService.userDetails.userId;
+    body["pitcherId"] = this.signinService.userDetails !== undefined ? this.signinService.userDetails.userId : 0;
     this.ideaService.createIdea(body,this.signinService.userDetails.jwttoken).subscribe(data => console.log(data));
     console.log(this.createIdeaForm.value);
   }

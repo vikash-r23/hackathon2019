@@ -56,7 +56,5 @@ export class SignUpComponent implements OnInit{
     this.signUpService.signMeUp(this.signUpForm.value).subscribe((data)=>{
       this.router.navigate(['/signIn']);
     });
-    // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.signUpForm.value, null, 4));
 }
 }
