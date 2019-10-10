@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IdeasComponent } from '../ideas/ideas.component';
 import { IdeasService } from 'src/dataService/ideas.service';
@@ -11,6 +11,7 @@ import { SignInService } from 'src/dataService/sign-in.service';
 })
 export class CreateIdeaComponent implements OnInit {
 
+  @ViewChild('addIdeaModal', {static: false}) noteModal: ElementRef;
   createIdeaForm : FormGroup;
   submitted = false;
 
@@ -47,7 +48,8 @@ export class CreateIdeaComponent implements OnInit {
     }
     const body = this.createIdeaForm.value;
     body["pitcherId"] = this.signinService.userDetails !== undefined ? this.signinService.userDetails.userId : 0;
-    this.ideaService.createIdea(body,this.signinService.userDetails.jwttoken).subscribe(data => console.log(data));
+    this.ideaService.createIdea(body,this.signinService.userDetails.jwttoken).subscribe(data => {console.log(data)
+    });
     console.log(this.createIdeaForm.value);
   }
 

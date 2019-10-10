@@ -7,7 +7,7 @@
                 Ideas
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" data-toggle="modal" data-target="#addIdeaModal">Add Idea</a>
+                <a class="dropdown-item add-idea-" data-toggle="modal" data-target="#addIdeaModal">Add Idea</a>
               </div>
             </li>
             <li class="nav-item">
@@ -27,10 +27,10 @@
             <div class="card-body">
               <table>
                 <tr>
-                  <td>Hi {{userDetails['firstName']}} {{userDetails['lastName']}}</td>
-                  <td>{{userDetails['userName']}}</td>
-                  <td>{{userDetails['userType']}}</td>
-                  <td>{{userDetails['loginTime']}}</td>
+                  <td>Hi {{userDetails['firstName']}} {{userDetails['lastName']}}</td></tr>
+                  <tr><td>{{userDetails['userName']}}</td></tr>
+                 <tr><td>{{userDetails['userType']}}</td></tr>
+                  <tr><td>{{userDetails['loginTime']}}</td>
                 </tr>
               <!-- <tr *ngFor="let userDetail of userDetails | keyvalue"><div *ngIf="!(userDetail.key==='jwttoken')">
                 <td class="capitaliseFirst">{{userDetail.key}}</td>
