@@ -1,13 +1,12 @@
-<header>
-    <nav class="navbar navbar-dark bg-dark nav">
-        <a class="navbar-brand text-light">Sign Up here</a>
-    </nav>
-</header>
 <div class="main-container">
+        <img class="bg-img" src="../../assets/images/bg.png" width="100%">
+            <a class="db-logo"><img src="../../assets/images/logo.jpg" width="100" height="60" alt=""></a>
+            <a class="app-logo"><img src="../../assets/images/app_logo.png" width="150" height="70" alt=""></a>
+<!-- <div class="main-container"> -->
     <div class="signup-container">
         <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" formFieldContainer>
             <div class="form-group form-field">
-                <label for="firstName">First Name*</label>
+                <label for="firstName">First Name<span>*</span></label>
                 <input formControlName="firstName" required name="firstName" id="firstName" type="text"
                     class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
                 <div *ngIf="submitted && f.firstName.errors">
@@ -15,7 +14,7 @@
                 </div>
             </div>
             <div class="form-group form-field">
-                <label for="lastName">Last Name*</label>
+                <label for="lastName">Last Name<span>*</span></label>
                 <input id="lastName" required name="lastName" type="text" formControlName="lastName"
                     class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
                 <div *ngIf="submitted && f.lastName.errors">
@@ -23,16 +22,16 @@
                 </div>
             </div>
             <div class="form-group form-field">
-                <label for="userName">User Name/Email ID*</label>
+                <label for="userName">Username<span>*</span></label>
                 <input id="userName" formControlName="userName" required name="userName" type="text"
                     class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }">
                 <div *ngIf="submitted && f.userName.errors">
-                    <div *ngIf="f.userName.errors.required">User Name is required.</div>
-                    <div *ngIf="f.userName.errors.email">Email not valid.</div>
+                    <div *ngIf="f.userName.errors.required">Username is required.</div>
+                    <!-- <div *ngIf="f.userName.errors.email">Email not valid.</div> -->
                 </div>
             </div>
             <div class="form-group form-field">
-                <label for="mobileNumber">Mobile number*</label>
+                <label for="mobileNumber">Mobile Number<span>*</span></label>
                 <input id="mobileNumber" formControlName="mobileNumber" required name="mobileNumber" type="tel"
                     class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobileNumber.errors }">
                 <div *ngIf="submitted && f.mobileNumber.errors">
@@ -42,7 +41,7 @@
                 </div>
             </div>
             <div class="form-group form-field">
-                <label for="password">Password*</label>
+                <label for="password">Password<span>*</span></label>
                 <input id="password" formControlName="password" required name="password" type="password"
                     class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
                 <div *ngIf="submitted && f.password.errors">
@@ -51,7 +50,7 @@
                 </div>
             </div>
             <div class="form-group form-field">
-                <label for="confirmPassword">Confirm Password*</label>
+                <label for="confirmPassword">Confirm Password<span>*</span></label>
                 <input id="confirmPassword" formControlName="confirmPassword" required name="confirmPassword"
                     type="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
                 <div *ngIf="submitted && f.confirmPassword.errors">
@@ -60,7 +59,7 @@
                 </div>
             </div>
             <div class="form-group form-field">
-                <label for="userType">User Type*</label>
+                <label for="userType">User Type<span>*</span></label>
                 <select id="userType" class="form-control" formControlName="userType" [ngClass]="{ 'is-invalid': submitted && f.userType.errors }">
                     <option value="">Select</option>
                     <option value="Investor">Investor</option>
@@ -68,12 +67,11 @@
                     <option value="Viewer">Viewer</option>
                 </select>
             </div>
-            <div class="form-group form-field">
-                <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" />
-                <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
-                <div *ngIf="submitted && f.acceptTerms.errors">Accept Ts & Cs is required</div>
+            <div class="form-group acceptTerms">
+                <label for="acceptTerms" class="form-check-label"><input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="chkbox"/>Accept Terms & Conditions</label>
+                <div *ngIf="submitted && f.acceptTerms.errors">Accept Ts & Cs is required.</div>
             </div>
-            <div class="form-field">
+            <div class="form-field" style="text-align: center;">
                 <button type="submit" >Sign Up</button>
             </div>
         </form>

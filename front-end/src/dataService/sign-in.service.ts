@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/internal/Observable";
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class SignInService {
   
   authenticateUser(body: any): Observable<any> {
     
-    return this._httpCall.post("http://griiin.southindia.cloudapp.azure.com:8080/api/user/authenticate", body);
+    return this._httpCall.post(environment.apiUrl+"/api/user/authenticate", body);
     
   }
 }

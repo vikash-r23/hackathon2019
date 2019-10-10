@@ -3,20 +3,20 @@ $primary-color: #0c2340;
 $white-color: #fff;
 
 .main-container {
-    background-color: $primary-color;
     height: 100vh;
-    overflow: auto;
-    position: relative;
+}
+.signUpContainer {
+    background-color: $primary-color;
 }
 .signup-container {
     background-color: $white-color;
     border-radius: 10px;
     height:auto;
-    left: 50%;
-    padding: 40px;
+    left: 49%;
+    padding: 23px;
     position: absolute;
     text-align: left;
-    top: 5%;
+    top: 13%;
     transform: translate(-50%,0);
     width:50%;
     overflow-y: auto;
@@ -27,7 +27,6 @@ $white-color: #fff;
     border-radius: 10px;
     font-size: 17px;
     height:22%;
-    //margin-bottom: 29px;
     outline: 0;
     padding: 9px;
     width: 65%;
@@ -37,11 +36,14 @@ $white-color: #fff;
 .form-field label{
     font-size: 17px;
     height:22%;
-    //margin-bottom: 29px;
     outline: 0;
     padding: 9px;
     width: 35%;
     float: left;
+
+    span {
+        color: #f91228;
+    }
 }
 
 .form-control.ng-pristine.ng-touched.ng-invalid {
@@ -53,7 +55,6 @@ $white-color: #fff;
     border-radius: 10px;
     font-size: 17px;
     height:22%;
-    //margin-bottom: 29px;
     outline: 0;
     padding: 9px;
     width: 65%;
@@ -64,24 +65,15 @@ $white-color: #fff;
     border-radius: 10px;
     font-size: 17px;
     height:22%;
-    //margin-bottom: 29px;
     outline: 0;
     padding: 9px;
     width: 65%;
     display: inline-block;
 }
-
-
 .alert{
-    //border: 1px solid #909090;
-    //border-radius: 10px;
     font-size: 15px;
     height:5%;
-    //padding-left: 10%;
-    //margin-bottom: 20px;
     outline: 0;
-    //padding-top: 0%;
-    //padding: 9px;
     width: 65%;
     display: inline-block;
 }
@@ -90,7 +82,6 @@ $white-color: #fff;
     border-radius: 10px;
     font-size: 17px;
     height:22%;
-    //margin-bottom: 29px;
     outline: 0;
     padding: 9px;
     width: 65%;
@@ -104,5 +95,16 @@ $white-color: #fff;
     font-size: 20px;
     height:48px;
     outline: 0;
-    width: 100%;
+    width: 45%;
+}
+.acceptTerms {
+    text-align: center;
+
+    .form-check-label {
+        margin-left: 26px;
+    }
+
+    .chkbox {
+        margin-right: 10px;
+    }
 }

@@ -7,7 +7,7 @@
                 Ideas
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" (click)="open(addIdea)">Add Idea</a>
+                <a class="dropdown-item" data-toggle="modal" data-target="#addIdeaModal">Add Idea</a>
               </div>
             </li>
             <li class="nav-item">
@@ -16,21 +16,8 @@
             <li class="nav-item">
               <a class="nav-link" routerLink="./startUps" routerLinkActive="active" skipLocationChange>Contact</a>
             </li>
-            <li class="nav-item dropdown" dropdown>
-                    <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-                      Basic dropdown<span class="caret"></span></a>
-                    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
-                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
-                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
-                      <div class="divider dropdown-divider"></div>
-                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
-                    </div>
-                  </li>
-            
-            
     </ul>
-    <form class="form-inline" [formGroup]="myForm">
+    <form class="form-inline" >
       <div class="btn-group dropleft">
         <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               User Info
@@ -60,9 +47,6 @@
       <router-outlet></router-outlet>
   </div>
 </div>
-
-
-
 
 <div class="card-columns" style="margin: 0.5rem">
     <div *ngFor="let idea of ideasData">
@@ -102,21 +86,26 @@
 </div>
 
 <!-- Add idea -->
-<ng-template #addIdea let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form>
-      <div class="form-group">
-       test
+<div class="modal" id="addIdeaModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
       </div>
-    </form>
+    </div>
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-  </div>
-</ng-template>

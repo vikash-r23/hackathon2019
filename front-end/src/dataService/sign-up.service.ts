@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/internal/Observable";
 import { Options } from 'selenium-webdriver';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,11 @@ export class SignUpService {
 
   constructor(private _httpCall: HttpClient) { }
   
-  signMeUp(body: Object): Observable<Object> {
-    return this._httpCall.post(this.urlcategory, body);
+  signMeUp(body: any): Observable<any> {
+    var data = JSON.stringify(body);
+
+    console.log("Lolololol");
+    return this._httpCall.post(environment.apiUrl+"api/user/register", data);
   }
 }
 
