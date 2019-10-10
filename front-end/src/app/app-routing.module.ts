@@ -11,7 +11,6 @@ import {CreateIdeaComponent} from "./create-idea/create-idea.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/signIn', pathMatch: 'full' },
-  { path: '', redirectTo: '/ideas', pathMatch: 'full' },
   {path:'signIn', component: SignInComponent},
   {path:'ideas', component: IdeasComponent},
   {path:'admin', component: AdminComponent},

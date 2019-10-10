@@ -16,12 +16,44 @@ export class IdeasComponent implements OnInit {
   addIdeaModal = '';
   ideasData = [];
   userDetails;
-  constructor(private _ideasService: IdeasService,private _signinService:SignInService,  private router:Router) { }
+
+  isAdminHidden = true;
+  isInvestorHidden = true;
+  isIdeaPitcherHidden = true;
+
+  constructor(private _ideasService: IdeasService, private _signinService: SignInService, private router: Router) { }
 
   ngOnInit() {
-    this.getIdeaData();    
-    this.userDetails=this._signinService.userDetails;
+    this.getIdeaData();
+    this.userDetails = this._signinService.userDetails;
     console.log(this.userDetails);
+    this.setLinks(this.userDetails);
+  }
+
+  setLinks(userDetails) {
+    switch (userDetails.userType) {
+      case 'INVESTOR': {
+        this.isInvestorHidden = false;
+        this.isAdminHidden = this.isIdeaPitcherHidden = true;
+      }
+
+        break;
+
+      case 'IDEA_PITCHER': {
+        this.isIdeaPitcherHidden = false;
+        this.isAdminHidden = this.isInvestorHidden = true;
+      }
+        break;
+
+      case 'VIEWER': {
+        this.isAdminHidden = false;
+        this.isIdeaPitcherHidden = this.isInvestorHidden = true;
+      }
+        break;
+
+      default:
+        break;
+    }
   }
 
   knowMoreClick(data) {
@@ -35,7 +67,7 @@ export class IdeasComponent implements OnInit {
     this.addIdeaTitle = 'Add Idea';
   }
 
-  signMeOut(){
+  signMeOut() {
     localStorage.clear();
     this.router.navigate(['/signIn']);
   }
