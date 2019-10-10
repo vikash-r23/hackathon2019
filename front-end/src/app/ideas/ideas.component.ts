@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IdeasService } from "../../dataService/ideas.service";
 import { SignInService } from 'src/dataService/sign-in.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ideas',
@@ -15,11 +16,12 @@ export class IdeasComponent implements OnInit {
   addIdeaModal = '';
   ideasData = [];
   userDetails;
-  constructor(private _ideasService: IdeasService,private _signinService:SignInService) { }
+  constructor(private _ideasService: IdeasService,private _signinService:SignInService,  private router:Router) { }
 
   ngOnInit() {
     this.getIdeaData();    
     this.userDetails=this._signinService.userDetails;
+    console.log(this.userDetails);
   }
 
   knowMoreClick(data) {
@@ -31,6 +33,11 @@ export class IdeasComponent implements OnInit {
   addIdea() {
     this.addIdeaModal = '';
     this.addIdeaTitle = 'Add Idea';
+  }
+
+  signMeOut(){
+    localStorage.clear();
+    this.router.navigate(['/signIn']);
   }
 
   getIdeaData() {

@@ -3,15 +3,14 @@ $primary-color: #0c2340;
 $white-color: #fff;
 
 .main-container {
-    background-color: $primary-color;
     height: 100vh;
-    position: relative;
-    //overflow-y: scroll;
+    background-color: $primary-color;
+
 }
-.signUpContainer {
+.createIdeaContainer {
     background-color: $primary-color;
 }
-.signup-container {
+.create-idea-container {
     background-color: $white-color;
     border-radius: 10px;
     height:80%;
@@ -21,30 +20,9 @@ $white-color: #fff;
     text-align: left;
     top: 13%;
     transform: translate(-50%,0);
-    width:55%;
+    width:50%;
     overflow-y: scroll;
     padding-top: 20px;
-}
-.form-field label{
-    font-size: 17px;
-    height:22%;
-    outline: 0;
-    padding: 9px;
-    width: 35%;
-    float: left;
-
-    span {
-        color: #f91228;
-    }
-}
-.textarea{
-    border: 1px solid #909090;
-    border-radius: 10px;
-    font-size: 17px;
-    height:22%;
-    outline: 0;
-    padding: 9px;
-    width: 100%;
 }
 .form-field input[type="text"] {
     border: 1px solid #909090;
@@ -57,6 +35,23 @@ $white-color: #fff;
     display: inline-block;
 }
 
+.form-field label{
+    font-size: 17px;
+    height:22%;
+    outline: 0;
+    padding: 9px;
+    width: 35%;
+    float: left;
+
+    span {
+        color: #f91228;
+    }
+}
+
+.form-control.ng-pristine.ng-touched.ng-invalid {
+    border: 1px solid #FA8072;
+    border-radius: 10px;
+}
 .form-field select {
     border: 1px solid #909090;
     border-radius: 10px;
@@ -65,6 +60,7 @@ $white-color: #fff;
     outline: 0;
     padding: 9px;
     width: 65%;
+    display: inline-block;
 }
 .form-field input[type="password"]  {
     border: 1px solid #909090;
@@ -73,6 +69,13 @@ $white-color: #fff;
     height:22%;
     outline: 0;
     padding: 9px;
+    width: 65%;
+    display: inline-block;
+}
+.alert{
+    font-size: 15px;
+    height:5%;
+    outline: 0;
     width: 65%;
     display: inline-block;
 }
@@ -86,12 +89,7 @@ $white-color: #fff;
     width: 65%;
 }
 
-.alert {
-    text-align: center;
-    background-color: transparent;
-    border: 0 none;
-}
-.form-field input[type="button"] {
+.form-field button{
     background: $primary-color;
     border: 0 none;
     border-radius: 15px;
@@ -101,3 +99,26 @@ $white-color: #fff;
     outline: 0;
     width: 50%;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 20px; 
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 20px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    border-radius: 20px;
+  }

@@ -12,7 +12,9 @@ public class JwtResponse implements Serializable {
 	private String userType;
 	private final String jwttoken;
 	private String loginTime;
-	
+	private String firstName;
+	private String lastName;
+
 	public JwtResponse(String userId,String userName, String userType, String jwttoken) {
 		super();
 		this.userId = userId;
@@ -22,7 +24,30 @@ public class JwtResponse implements Serializable {
 		this.loginTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss").format(LocalDateTime.now());
 	}
 
-	
+	public JwtResponse(String userId,String userName, String userType, String jwttoken, String firstName, String lastName) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.userType = userType;
+		this.jwttoken = jwttoken;
+		this.loginTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss").format(LocalDateTime.now());
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	@Override
+	public String toString() {
+		return "JwtResponse{" +
+				"userId='" + userId + '\'' +
+				", userName='" + userName + '\'' +
+				", userType='" + userType + '\'' +
+				", jwttoken='" + jwttoken + '\'' +
+				", loginTime='" + loginTime + '\'' +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				'}';
+	}
+
 	public String getUserId() {
 		return userId;
 	}
