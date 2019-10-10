@@ -1,6 +1,10 @@
 <div class="main-container">
-    <div class="signin-container">
-        <form>
+        <img class="bg-img" src="../../assets/images/bg.png" width="100%">
+            <a class="db-logo"><img src="../../assets/images/logo.jpg" width="100" height="60" alt=""></a>
+            <a class="app-logo"><img src="../../assets/images/app_logo.png" width="150" height="70" alt=""></a>
+<!-- <div class="main-container"> -->
+    <div class="signup-container">
+        <form class="create-idea">
             <div class = "form-group form-field">
                 <label for = "ideaName">Idea Name</label>
                 <input required ngModel name="ideaName" #ideaName = "ngModel" id = "ideaName" type="text" class="form-control" (change) = "log(ideaName)">
@@ -69,9 +73,9 @@
                 <label for = "linkedin">Linkedin</label>
                 <input id = "linkedin" ngModel name="linkedin" #linkedin = "ngModel" type="text" class="form-control">
             </div>
-            <div class="form-field">
+            <div class="form-field" style="text-align: center">
                 <input type="button" name="submitDetails" value="Submit"/>
             </div>
         </form>
-    </div>
+</div>
 </div>

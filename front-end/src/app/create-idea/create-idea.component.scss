@@ -6,28 +6,42 @@ $white-color: #fff;
     background-color: $primary-color;
     height: 100vh;
     position: relative;
-    overflow-y: scroll;
+    //overflow-y: scroll;
 }
-.signin-container {
+.signUpContainer {
+    background-color: $primary-color;
+}
+.signup-container {
     background-color: $white-color;
     border-radius: 10px;
-    height:90vh;
-    left: 50%;
-    padding: 40px;
+    height:80%;
+    left: 49%;
+    padding: 23px;
     position: absolute;
     text-align: left;
-    top: 5%;
+    top: 13%;
     transform: translate(-50%,0);
     width:55%;
     overflow-y: scroll;
     padding-top: 20px;
+}
+.form-field label{
+    font-size: 17px;
+    height:22%;
+    outline: 0;
+    padding: 9px;
+    width: 35%;
+    float: left;
+
+    span {
+        color: #f91228;
+    }
 }
 .textarea{
     border: 1px solid #909090;
     border-radius: 10px;
     font-size: 17px;
     height:22%;
-    margin-bottom: 29px;
     outline: 0;
     padding: 9px;
     width: 100%;
@@ -37,10 +51,10 @@ $white-color: #fff;
     border-radius: 10px;
     font-size: 17px;
     height:22%;
-    margin-bottom: 29px;
     outline: 0;
     padding: 9px;
-    width: 100%;
+    width: 65%;
+    display: inline-block;
 }
 
 .form-field select {
@@ -48,50 +62,42 @@ $white-color: #fff;
     border-radius: 10px;
     font-size: 17px;
     height:22%;
-    margin-bottom: 29px;
     outline: 0;
     padding: 9px;
-    width: 100%;
+    width: 65%;
 }
 .form-field input[type="password"]  {
     border: 1px solid #909090;
     border-radius: 10px;
     font-size: 17px;
     height:22%;
-    margin-bottom: 29px;
     outline: 0;
     padding: 9px;
-    width: 100%;
-}
-.alert{
-    border: 1px solid #909090;
-    border-radius: 10px;
-    font-size: 15px;
-    height:10%;
-    margin-bottom: 20px;
-    outline: 0;
-    //padding-top: 0%;
-    //padding: 9px;
-    width: 100%;
+    width: 65%;
+    display: inline-block;
 }
 .form-field input[type="tel"] {
     border: 1px solid #909090;
     border-radius: 10px;
     font-size: 17px;
     height:22%;
-    margin-bottom: 29px;
     outline: 0;
     padding: 9px;
-    width: 100%;
+    width: 65%;
 }
 
+.alert {
+    text-align: center;
+    background-color: transparent;
+    border: 0 none;
+}
 .form-field input[type="button"] {
     background: $primary-color;
     border: 0 none;
     border-radius: 15px;
     color: $white-color;
-    font-size: 20px;
-    height:48px;
+    font-size: 17px;
+    height:43px;
     outline: 0;
-    width: 100%;
+    width: 50%;
 }

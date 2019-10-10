@@ -6,6 +6,15 @@
     <div class="signup-container">
         <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" formFieldContainer>
             <div class="form-group form-field">
+                    <label for="userName">Username<span>*</span></label>
+                    <input id="userName" formControlName="userName" required name="userName" type="text"
+                        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }">
+                    <div *ngIf="submitted && f.userName.errors">
+                        <div *ngIf="f.userName.errors.required">Username is required.</div>
+                        <!-- <div *ngIf="f.userName.errors.email">Email not valid.</div> -->
+                    </div>
+            </div>
+            <div class="form-group form-field">
                 <label for="firstName">First Name<span>*</span></label>
                 <input formControlName="firstName" required name="firstName" id="firstName" type="text"
                     class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
@@ -21,15 +30,7 @@
                     <div *ngIf="f.lastName.errors.required">Last Name is required.</div>
                 </div>
             </div>
-            <div class="form-group form-field">
-                <label for="userName">Username<span>*</span></label>
-                <input id="userName" formControlName="userName" required name="userName" type="text"
-                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }">
-                <div *ngIf="submitted && f.userName.errors">
-                    <div *ngIf="f.userName.errors.required">Username is required.</div>
-                    <!-- <div *ngIf="f.userName.errors.email">Email not valid.</div> -->
-                </div>
-            </div>
+            
             <div class="form-group form-field">
                 <label for="mobileNumber">Mobile Number<span>*</span></label>
                 <input id="mobileNumber" formControlName="mobileNumber" required name="mobileNumber" type="tel"
@@ -62,9 +63,9 @@
                 <label for="userType">User Type<span>*</span></label>
                 <select id="userType" class="form-control" formControlName="userType" [ngClass]="{ 'is-invalid': submitted && f.userType.errors }">
                     <option value="">Select</option>
-                    <option value="Investor">Investor</option>
-                    <option value="Idea Pitcher">Idea Pitcher</option>
-                    <option value="Viewer">Viewer</option>
+                    <option value="INVESTOR">Investor</option>
+                    <option value="IDEA_PITCHER">Idea Pitcher</option>
+                    <option value="VIEWER">Viewer</option>
                 </select>
             </div>
             <div class="form-group acceptTerms">
