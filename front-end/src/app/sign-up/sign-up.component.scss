@@ -11,7 +11,7 @@ $white-color: #fff;
 .signup-container {
     background-color: $white-color;
     border-radius: 10px;
-    height:auto;
+    height:72%;
     left: 49%;
     padding: 23px;
     position: absolute;
@@ -19,7 +19,7 @@ $white-color: #fff;
     top: 13%;
     transform: translate(-50%,0);
     width:50%;
-    overflow-y: auto;
+    overflow-y: scroll;
     padding-top: 20px;
 }
 .form-field input[type="text"] {
@@ -108,3 +108,26 @@ $white-color: #fff;
         margin-right: 10px;
     }
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 20px; 
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 20px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    border-radius: 20px;
+  }
