@@ -15,6 +15,9 @@ import { StartUpsComponent } from './start-ups/start-ups.component';
 import { IdeasComponent } from './ideas/ideas.component';
 
 import { IdeasService } from "../dataService/ideas.service";
+import { InvestorService } from "../dataService/investor.service";
+import { SignInService } from "../dataService/sign-in.service";
+import { StartUpService } from "../dataService/start-up.service";
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -47,7 +50,7 @@ import { AddIdeaComponent } from './add-idea/add-idea.component';
     ReactiveFormsModule,
     AgGridModule.withComponents([AppComponent])
   ],
-  providers: [IdeasService],
+  providers: [IdeasService, InvestorService, SignInService, StartUpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
