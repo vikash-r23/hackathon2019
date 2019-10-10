@@ -5,7 +5,8 @@
 export const environment = {
   production: true,
   environmentName: 'Development',
-  apiUrl: 'http://griiin.southindia.cloudapp.azure.com:8080'
+  //apiUrl: 'http://griiin.southindia.cloudapp.azure.com:8080'
+  apiUrl:'http://localhost:8081'
 };
 
 /*

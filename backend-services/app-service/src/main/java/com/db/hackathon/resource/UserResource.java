@@ -70,7 +70,9 @@ public class UserResource {
 		String role = Iterables.get(userDetails.getAuthorities(), 1).getAuthority();
 		String firstName = Iterables.get(userDetails.getAuthorities(), 2).getAuthority();
 		String lastName = Iterables.get(userDetails.getAuthorities(), 3).getAuthority();
-		return ResponseEntity.ok(new JwtResponse(userId,userDetails.getUsername(),role,token, firstName, lastName));
+		JwtResponse j=new JwtResponse(userId,userDetails.getUsername(),role,token, firstName, lastName);
+		System.out.println(j.toString());
+		return ResponseEntity.ok(j);
 	}
 
 	private void authenticate(String username, String password) throws Exception {

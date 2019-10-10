@@ -21,6 +21,7 @@ export class IdeasComponent implements OnInit {
   ngOnInit() {
     this.getIdeaData();    
     this.userDetails=this._signinService.userDetails;
+    console.log(this.userDetails);
   }
 
   knowMoreClick(data) {

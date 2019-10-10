@@ -35,7 +35,19 @@ public class JwtResponse implements Serializable {
 		this.lastName = lastName;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "JwtResponse{" +
+				"userId='" + userId + '\'' +
+				", userName='" + userName + '\'' +
+				", userType='" + userType + '\'' +
+				", jwttoken='" + jwttoken + '\'' +
+				", loginTime='" + loginTime + '\'' +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				'}';
+	}
+
 	public String getUserId() {
 		return userId;
 	}
