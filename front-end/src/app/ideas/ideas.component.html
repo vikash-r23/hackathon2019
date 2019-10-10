@@ -26,12 +26,18 @@
           <div class="card" style="width: 18rem; border-style: none">
             <div class="card-body">
               <table>
-              <tr *ngFor="let userDetail of userDetails | keyvalue"><div *ngIf="!(userDetail.key==='jwttoken')">
-                <td>{{userDetail.key}}</td>
+                <tr>
+                  <td>Hi {{userDetails['firstName']}} {{userDetails['lastName']}}</td>
+                  <td>{{userDetails['userName']}}</td>
+                  <td>{{userDetails['userType']}}</td>
+                  <td>{{userDetails['loginTime']}}</td>
+                </tr>
+              <!-- <tr *ngFor="let userDetail of userDetails | keyvalue"><div *ngIf="!(userDetail.key==='jwttoken')">
+                <td class="capitaliseFirst">{{userDetail.key}}</td>
                 <td>:</td>
                 <td>{{userDetail.value}}</td>
               </div>
-            </tr>
+            </tr> -->
               </table>  
               <button id = "signout" class = "btn btn-primary my-btn" (click)="signMeOut()">Sign out</button>
               <!-- <h5 class="card-title">Logged-in user name</h5>
@@ -51,10 +57,10 @@
 <div class="card-columns" style="margin: 0.5rem">
     <div *ngFor="let idea of ideasData">
         <div class="card">
-            <div class="card-header">{{idea.name}}</div>
+            <div class="card-header">{{idea.ideaName}}</div>
             <div class="card-body">
-                <h4 class="card-title">{{idea.idea}}</h4>
-                <p class="card-text">{{idea.details}}</p>
+                <h4 class="card-title">{{idea.ideaName}}</h4>
+                <p class="card-text">{{idea.description}}</p>
             </div>
             <div class="card-footer">
                 <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ideaDetails" 

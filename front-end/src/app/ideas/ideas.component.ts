@@ -41,9 +41,9 @@ export class IdeasComponent implements OnInit {
   }
 
   getIdeaData() {
-    this._ideasService.getIdeasData().subscribe(
+    this._ideasService.getIdeasData(this._signinService.userDetails).subscribe(
       data => {
-        this.ideasData = data.ideasData;
+        this.ideasData = data;
       }
     );
   }
