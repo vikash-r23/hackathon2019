@@ -3,6 +3,8 @@ package com.vikky.xml;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 
 import javax.xml.stream.XMLInputFactory;
@@ -12,17 +14,62 @@ import javax.xml.stream.XMLStreamReader;
 
 public class Test {
 
+	private static final Employee PILL = new Employee();
+	
+
 	public static void main(String[] args) throws XMLStreamException, IOException {
 		long st = System.currentTimeMillis();
-		parse();
+		Test t = new Test();
+		
+		ExecutorService ex = Executors.newFixedThreadPool(5);
+		
+		BlockingQueue<Employee> q= new LinkedBlockingQueue<>() ;
+
+		Runnable r = ()->{
+			try {
+				t.parse(q);
+			} catch (XMLStreamException | IOException e) {
+				e.printStackTrace();
+			}
+		};
+
+		//new Thread(r).start();
+		//System.out.println("Total Loading time  wuth STAX = " + (System.currentTimeMillis()-st)/1000 +" s");
+
+		ex.submit(r);
+
+		Runnable c1 = ()->{
+
+		while(true) {
+			try {
+				//System.out.println("Taking out - before = "+q.size());
+				Employee take = q.take();
+				if (PILL == take) {
+					break;
+				}
+				System.out.println(Thread.currentThread().getName() + ":::::::" +take);
+				//System.out.println("Taking out - After = "+q.size());
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		};
+
+		
+		ex.submit(c1);
+		ex.submit(c1);
+		ex.submit(c1);
+
+		//new Thread(c1).start();
+		//ex.shutdown();
 		System.out.println("Total Loading time  wuth STAX = " + (System.currentTimeMillis()-st)/1000 +" s");
 	}
 
-	public static void parse() throws XMLStreamException, IOException {
-		try (FileInputStream fis = new FileInputStream("C:\\\\Users\\\\vikky\\\\Desktop\\\\XML\\\\employees1.xml")) {
+	public  void parse(BlockingQueue<Employee> q) throws XMLStreamException, IOException {
+		try (FileInputStream fis = new FileInputStream("C:\\\\Users\\\\vikky\\\\Desktop\\\\XML\\\\employees2.xml")) {
 			XMLInputFactory xmlInFact = XMLInputFactory.newInstance();
 			XMLStreamReader reader = xmlInFact.createXMLStreamReader(fis);
-			BlockingQueue<Employee> q = null ;//
 			Employee e = null;
 			boolean bAge = false;
 			boolean bName = false;
@@ -35,10 +82,11 @@ public class Test {
 					String elementName = reader.getLocalName();
 					switch(elementName){
 					case "Employees":
-						q = new LinkedBlockingQueue<Employee>();
+						//q = new LinkedBlockingQueue<Employee>();
 						break;
 					case "Employee":
 						e = new Employee();
+						e.setId(reader.getAttributeValue(null, "id"));
 						break;
 					case "name":
 						bName = true;
@@ -62,13 +110,13 @@ public class Test {
 						bName = false;
 					}
 					else if(bAge){
-						e.setAge(reader.toString());
+						e.setAge(reader.getText());
 						bAge = false;
 					}else if(bGender){
-						e.setGender(reader.toString());
+						e.setGender(reader.getText());
 						bGender = false;
 					}else if(bRole){
-						e.setRole(reader.toString());
+						e.setRole(reader.getText());
 						bAge = false;
 					}
 					if(reader.hasText())
@@ -86,15 +134,20 @@ public class Test {
 					break;
 
 				case XMLStreamConstants.START_DOCUMENT:
-					q = new LinkedBlockingQueue();
+					//q = new LinkedBlockingQueue();
 					break;
 				}
 
 				reader.next();
 			}
 			reader.close();
+			q.put(PILL);
+			q.put(PILL);
+			q.put(PILL);
 			System.out.println(q.size());
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 	}
 }
-
