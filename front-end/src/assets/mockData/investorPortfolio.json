@@ -1,0 +1,104 @@
+{
+    "investorGainsData": [
+        {
+            "name": "Idea 1",
+            "series": [
+                {
+                    "name": "Investment",
+                    "value": 7300000
+                },
+                {
+                    "name": "Return",
+                    "value": 8940000
+                }
+            ]
+        },
+        {
+            "name": "Idea 2",
+            "series": [
+                {
+                    "name": "Investment",
+                    "value": 7870000
+                },
+                {
+                    "name": "Return",
+                    "value": 8270000
+                }
+            ]
+        },
+        {
+            "name": "France",
+            "series": [
+                {
+                    "name": "Investment",
+                    "value": 5000002
+                },
+                {
+                    "name": "Return",
+                    "value": 5800000
+                }
+            ]
+        }
+    ],
+    "investorTotalInvestment": {
+        "name": "Total Investment",
+        "value": 20987634
+    },
+    "investorBreakupData": [
+        {
+            "name": "Monthly Investment BreakUp",
+            "series": [
+                {
+                    "name": "January",
+                    "value": 200
+                },
+                {
+                    "name": "February",
+                    "value": 130
+                },
+                {
+                    "name": "March",
+                    "value": 380
+                },
+                {
+                    "name": "April",
+                    "value": 80
+                },
+                {
+                    "name": "May",
+                    "value": 120
+                },
+                {
+                    "name": "June",
+                    "value": 210
+                },
+                {
+                    "name": "July",
+                    "value": 230
+                },
+                {
+                    "name": "August",
+                    "value": 110
+                }
+            ]
+        }
+    ],
+    "investorDomainData": [
+        {
+            "name": "Energy",
+            "value": 350
+        },
+        {
+            "name": "Natural Resources",
+            "value": 100
+        },
+        {
+            "name": "Carbon Footprint",
+            "value": 250
+        },
+        {
+            "name": "Green Recycling",
+            "value": 200
+        }
+    ]
+}
