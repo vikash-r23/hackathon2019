@@ -1,0 +1,124 @@
+
+$primary-color: #0c2340;
+$white-color: #fff;
+
+.main-container {
+    height: 100vh;
+    background-color: $primary-color;
+
+}
+.createIdeaContainer {
+    background-color: $primary-color;
+}
+.create-idea-container {
+    background-color: $white-color;
+    border-radius: 10px;
+    height:80%;
+    left: 49%;
+    padding: 23px;
+    position: absolute;
+    text-align: left;
+    top: 13%;
+    transform: translate(-50%,0);
+    width:50%;
+    overflow-y: scroll;
+    padding-top: 20px;
+}
+.form-field input[type="text"] {
+    border: 1px solid #909090;
+    border-radius: 10px;
+    font-size: 17px;
+    height:22%;
+    outline: 0;
+    padding: 9px;
+    width: 65%;
+    display: inline-block;
+}
+
+.form-field label{
+    font-size: 17px;
+    height:22%;
+    outline: 0;
+    padding: 9px;
+    width: 35%;
+    float: left;
+
+    span {
+        color: #f91228;
+    }
+}
+
+.form-control.ng-pristine.ng-touched.ng-invalid {
+    border: 1px solid #FA8072;
+    border-radius: 10px;
+}
+.form-field select {
+    border: 1px solid #909090;
+    border-radius: 10px;
+    font-size: 17px;
+    height:22%;
+    outline: 0;
+    padding: 9px;
+    width: 65%;
+    display: inline-block;
+}
+.form-field input[type="password"]  {
+    border: 1px solid #909090;
+    border-radius: 10px;
+    font-size: 17px;
+    height:22%;
+    outline: 0;
+    padding: 9px;
+    width: 65%;
+    display: inline-block;
+}
+.alert{
+    font-size: 15px;
+    height:5%;
+    outline: 0;
+    width: 65%;
+    display: inline-block;
+}
+.form-field input[type="tel"] {
+    border: 1px solid #909090;
+    border-radius: 10px;
+    font-size: 17px;
+    height:22%;
+    outline: 0;
+    padding: 9px;
+    width: 65%;
+}
+
+.form-field button{
+    background: $primary-color;
+    border: 0 none;
+    border-radius: 15px;
+    color: $white-color;
+    font-size: 17px;
+    height:43px;
+    outline: 0;
+    width: 50%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 20px; 
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 20px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    border-radius: 20px;
+  }

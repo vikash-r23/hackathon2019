@@ -1,0 +1,75 @@
+$primary-color: #0c2340;
+$white-color: #fff;
+
+.container-fluid {
+    padding: 0;
+}
+.header {
+    background-color: $primary-color;
+    padding-bottom: 0px;
+
+    a {
+        padding-top: 0px;
+        padding-bottom: 10px;
+    }
+}
+.menu {
+    margin-top: 40px;
+
+    .nav-item {
+        margin-right: 70px;
+
+        a {
+            color: $white-color;
+        }
+
+        a:hover {
+            color: #007bff !important;
+        }
+    }
+}
+.nav-item {
+    .dropdown-menu {
+        position: absolute;
+        padding-top: 5px;
+        padding-bottom: 0px;
+        
+        a {
+            color: #000;
+        }
+    }
+}
+#addIdeaModal {
+    .modal-dialog {
+        max-width:600px;
+    }
+
+    .modal-header {
+        padding: 5px 13px;
+        color: #fff;
+        background: #0c2340;
+
+        .modal-title {
+            font-size: 16px;
+        }
+
+        .close {
+            color: #fff;
+            padding: 11px;
+        }
+    }
+
+    .modal-footer {
+        display:none;
+    }
+}
+.my-btn{
+    margin-top: 10px;
+    float:right;
+    width: 40%;
+    background-color: #0c2340;
+    float: right;
+}
+.dropdown-item:active {
+    background-color: transparent;
+}

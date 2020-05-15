@@ -1,0 +1,49 @@
+
+$primary-color: #0c2340;
+$white-color: #fff;
+
+.header-container {
+    background-color: $primary-color;
+}
+.signin-container {
+    background-color: $white-color;
+    border-radius: 10px;
+    float: right;
+    height:auto;
+    padding: 40px;
+    position: absolute;
+    right: 3%;
+    text-align: center;
+    top:30%;
+    width:35%;
+}
+.form-field input[type="text"], input[type="password"] {
+    border: 1px solid #909090;
+    border-radius: 10px;
+    font-size: 17px;
+    height:43px;
+    margin-bottom: 29px;
+    outline: 0;
+    padding: 9px;
+    width: 100%;
+}
+
+.form-field button {
+    background: $primary-color;
+    border: 0 none;
+    border-radius: 15px;
+    color: $white-color;
+    font-size: 20px;
+    height:48px;
+    outline: 0;
+    width: 100%;
+}
+.signUpLink {
+    float: right;
+    margin-top: 10px;
+    color: #007bff;
+
+    a {
+        text-decoration: underline;
+    }
+}
